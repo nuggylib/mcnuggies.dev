@@ -1,6 +1,6 @@
 
 
-import { join, dirname } from "path"
+import { join, dirname, resolve } from "path"
 
 /**
 * This function is used to resolve the absolute path of a package.
@@ -14,13 +14,16 @@ function getAbsolutePath(value) {
 const config = {
   "stories": [
     `../stories/**/*.mdx`,
-    `../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)`
+    `../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)`,
+    `../pages/**/*.stories.@(js|jsx|mjs|ts|tsx)`,
+    `../components/**/*.stories.@(js|jsx|mjs|ts|tsx)`
   ],
   "addons": [
     getAbsolutePath(`@chromatic-com/storybook`),
     getAbsolutePath(`@storybook/addon-docs`),
     getAbsolutePath(`@storybook/addon-a11y`),
-    getAbsolutePath(`@storybook/addon-vitest`)
+    getAbsolutePath(`@storybook/addon-vitest`),
+    getAbsolutePath(`@storybook/addon-mcp`)
   ],
   "framework": {
     "name": getAbsolutePath(`@storybook/nextjs-vite`),
@@ -28,6 +31,21 @@ const config = {
   },
   "staticDirs": [
     `../public`
-  ]
+  ],
+  "viteFinal": async (config) => {
+    // Configure SASS to include the styles directory for imports
+    const stylesPath = resolve(__dirname, `../styles`)
+    config.css = config.css || {}
+    config.css.preprocessorOptions = config.css.preprocessorOptions || {}
+    config.css.preprocessorOptions.scss = config.css.preprocessorOptions.scss || {}
+    config.css.preprocessorOptions.scss.includePaths = [stylesPath]
+
+    // Also configure the alias for import resolution
+    config.resolve = config.resolve || {}
+    config.resolve.alias = config.resolve.alias || {}
+    config.resolve.alias[`variables`] = resolve(stylesPath, `_variables.scss`)
+
+    return config
+  }
 }
 export default config
