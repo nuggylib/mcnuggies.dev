@@ -87,4 +87,11 @@ js.configs.recommended, // Extend Next.js configurations using FlatCompat
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-use-before-define': 'off',
   },
+}, // Storybook-specific rule overrides
+{
+  files: ['**/*.stories.@(js|jsx|ts|tsx)', '**/.storybook/**/*.@(js|jsx|ts|tsx)'],
+  rules: {
+    // Enforce double quotes for Storybook files to avoid CSF parsing issues
+    quotes: ['error', 'double'],
+  },
 }, ...storybook.configs["flat/recommended"]];
