@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
+
 import js from '@eslint/js'
 import typescript from '@typescript-eslint/eslint-plugin'
 import typescriptParser from '@typescript-eslint/parser'
@@ -9,85 +12,79 @@ const compat = new FlatCompat({
   recommendedConfig: js.configs.recommended,
 })
 
-export default [
-  // Ignore build directories and generated files
-  {
-    ignores: [
-      '.next/**',
-      'out/**',
-      'node_modules/**',
-      'dist/**',
-      'build/**',
-      '*.config.js',
-      '*.config.mjs',
-      'coverage/**',
-    ],
+export default [// Ignore build directories and generated files
+{
+  ignores: [
+    '.next/**',
+    'out/**',
+    'node_modules/**',
+    'dist/**',
+    'build/**',
+    '*.config.js',
+    '*.config.mjs',
+    'coverage/**',
+  ],
+}, // Apply to all JavaScript and TypeScript files
+{
+  files: ['**/*.{js,jsx,ts,tsx}'],
+  languageOptions: {
+    parser: typescriptParser,
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+      ecmaVersion: 13,
+      sourceType: 'module',
+    },
+    globals: {
+      ...globals.browser,
+      ...globals.node,
+      ...globals.es2021,
+      JSX: true,
+    },
   },
-  // Apply to all JavaScript and TypeScript files
-  {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-        ecmaVersion: 13,
-        sourceType: 'module',
-      },
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-        ...globals.es2021,
-        JSX: true,
-      },
-    },
-    plugins: {
-      '@typescript-eslint': typescript,
-    },
-    rules: {
-      'max-len': 'off',
-      quotes: [2, 'backtick'],
-      indent: 'off',
-      semi: ['error', 'never'],
-      'no-use-before-define': 'off',
-      '@typescript-eslint/no-use-before-define': ['error'],
-      'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
-      'arrow-body-style': 'off',
-      'padded-blocks': ['error', { classes: 'always' }],
-      'no-underscore-dangle': 'off',
-      'no-trailing-spaces': ['error', { ignoreComments: true }],
-      'jsx-a11y/click-events-have-key-events': 'off',
-      'jsx-a11y/no-static-element-interactions': 'off',
-      'jsx-a11y/alt-text': 'off',
-      'import/prefer-default-export': 'off',
-      'import/extensions': 'off',
-      'react/require-default-props': 'off',
-      'react/jsx-indent': [2, 2, { checkAttributes: true, indentLogicalExpressions: true }],
-      'react/no-unescaped-entities': 'off',
-    },
-    settings: {
-      'import/resolver': {
-        node: {
-          extensions: ['.js', '.jsx', '.ts', '.tsx'],
-          moduleDirectory: ['node_modules', 'next/', 'studio/', 'packages/'],
-        },
+  plugins: {
+    '@typescript-eslint': typescript,
+  },
+  rules: {
+    'max-len': 'off',
+    quotes: [2, 'backtick'],
+    indent: 'off',
+    semi: ['error', 'never'],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'arrow-body-style': 'off',
+    'padded-blocks': ['error', { classes: 'always' }],
+    'no-underscore-dangle': 'off',
+    'no-trailing-spaces': ['error', { ignoreComments: true }],
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/alt-text': 'off',
+    'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-indent': [2, 2, { checkAttributes: true, indentLogicalExpressions: true }],
+    'react/no-unescaped-entities': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'next/', 'studio/', 'packages/'],
       },
     },
   },
-  // Extend core ESLint recommended rules
-  js.configs.recommended,
-  // Extend Next.js configurations using FlatCompat
-  ...compat.extends('next/core-web-vitals', 'next'),
-  // TypeScript specific overrides
-  {
-    files: ['**/*.{ts,tsx}'],
-    plugins: {
-      '@typescript-eslint': typescript,
-    },
-    rules: {
-      '@typescript-eslint/no-use-before-define': ['error'],
-      'no-use-before-define': 'off',
-    },
+}, // Extend core ESLint recommended rules
+js.configs.recommended, // Extend Next.js configurations using FlatCompat
+...compat.extends('next/core-web-vitals', 'next'), // TypeScript specific overrides
+{
+  files: ['**/*.{ts,tsx}'],
+  plugins: {
+    '@typescript-eslint': typescript,
   },
-]
+  rules: {
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'no-use-before-define': 'off',
+  },
+}, ...storybook.configs["flat/recommended"]];
