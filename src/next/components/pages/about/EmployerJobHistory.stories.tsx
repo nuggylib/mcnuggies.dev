@@ -31,6 +31,9 @@ type Story = StoryObj<typeof meta>
 const singleJobMock = [
   {
     _id: "job1",
+    _createdAt: "1234",
+    _rev: "",
+    _updatedAt: "1234",
     _type: "jobTitle" as const,
     title: "Senior Software Engineer",
     startDate: "2022-01-15",
@@ -48,6 +51,9 @@ const singleJobMock = [
 const multipleJobsMock = [
   {
     _id: "job1",
+    _createdAt: "1234",
+    _rev: "",
+    _updatedAt: "1234",
     _type: "jobTitle" as const,
     title: "Principal Software Engineer",
     startDate: "2023-01-01",
@@ -61,6 +67,9 @@ const multipleJobsMock = [
   },
   {
     _id: "job2",
+    _createdAt: "1234",
+    _rev: "",
+    _updatedAt: "1234",
     _type: "jobTitle" as const,
     title: "Senior Software Engineer",
     startDate: "2020-06-01",
@@ -75,6 +84,9 @@ const multipleJobsMock = [
   },
   {
     _id: "job3",
+    _createdAt: "1234",
+    _rev: "",
+    _updatedAt: "1234",
     _type: "jobTitle" as const,
     title: "Software Engineer",
     startDate: "2018-03-01",
@@ -92,6 +104,9 @@ const multipleJobsMock = [
 const contractJobMock = [
   {
     _id: "job1",
+    _createdAt: "1234",
+    _rev: "",
+    _updatedAt: "1234",
     _type: "jobTitle" as const,
     title: "Contract Frontend Developer",
     startDate: "2023-06-01",
@@ -108,6 +123,9 @@ const contractJobMock = [
 const internshipJobMock = [
   {
     _id: "job1",
+    _createdAt: "1234",
+    _rev: "",
+    _updatedAt: "1234",
     _type: "jobTitle" as const,
     title: "Software Engineering Intern",
     startDate: "2021-06-01",
@@ -156,6 +174,9 @@ export const CurrentJob: Story = {
     jobs: [
       {
         _id: "job1",
+        _createdAt: "1234",
+        _rev: "",
+        _updatedAt: "1234",
         _type: "jobTitle" as const,
         title: "Staff Software Engineer",
         startDate: "2024-01-15",
@@ -212,6 +233,9 @@ export const LongResponsibilitiesList: Story = {
     jobs: [
       {
         _id: "job1",
+        _createdAt: "1234",
+        _rev: "",
+        _updatedAt: "1234",
         _type: "jobTitle" as const,
         title: "Engineering Manager",
         startDate: "2020-01-01",

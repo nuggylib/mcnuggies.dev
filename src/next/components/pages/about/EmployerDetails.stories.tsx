@@ -47,6 +47,9 @@ type Story = StoryObj<typeof meta>
 const mockJobs = [
   {
     _id: "job1",
+    _createdAt: "1234",
+    _rev: "",
+    _updatedAt: "1234",
     _type: "jobTitle" as const,
     title: "Senior Software Engineer",
     startDate: "2022-01-15",
@@ -60,6 +63,9 @@ const mockJobs = [
   },
   {
     _id: "job2",
+    _createdAt: "1234",
+    _rev: "",
+    _updatedAt: "1234",
     _type: "jobTitle" as const,
     title: "Software Engineer",
     startDate: "2020-06-01",
@@ -76,6 +82,9 @@ const mockJobs = [
 const currentJob = [
   {
     _id: "job3",
+    _createdAt: "1234",
+    _rev: "",
+    _updatedAt: "1234",
     _type: "jobTitle" as const,
     title: "Principal Software Engineer",
     startDate: "2024-01-01",
@@ -126,6 +135,9 @@ export const WithoutHomePage: Story = {
     jobs: [
       {
         _id: "job4",
+        _createdAt: "1234",
+        _rev: "",
+        _updatedAt: "1234",
         _type: "jobTitle" as const,
         title: "Full Stack Developer",
         startDate: "2018-03-15",
@@ -158,6 +170,9 @@ export const LongTenure: Story = {
     jobs: [
       {
         _id: "job5",
+        _createdAt: "1234",
+        _rev: "",
+        _updatedAt: "1234",
         _type: "jobTitle" as const,
         title: "Engineering Manager",
         startDate: "2020-01-01",
@@ -171,6 +186,9 @@ export const LongTenure: Story = {
       },
       {
         _id: "job6",
+        _createdAt: "1234",
+        _rev: "",
+        _updatedAt: "1234",
         _type: "jobTitle" as const,
         title: "Senior Software Engineer",
         startDate: "2017-06-01",
@@ -184,6 +202,9 @@ export const LongTenure: Story = {
       },
       {
         _id: "job7",
+        _createdAt: "1234",
+        _rev: "",
+        _updatedAt: "1234",
         _type: "jobTitle" as const,
         title: "Software Engineer",
         startDate: "2015-09-01",
@@ -216,6 +237,9 @@ export const ShortTenure: Story = {
     jobs: [
       {
         _id: "job8",
+        _createdAt: "1234",
+        _rev: "",
+        _updatedAt: "1234",
         _type: "jobTitle" as const,
         title: "Contract Developer",
         startDate: "2023-01-15",
