@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 import { OutlineModal } from "./OutlineModal"
-import { OutlineItem, SeriesOutlineItem } from "../../../pages/blog/[slug]"
+import { OutlineItem, SeriesOutlineItem } from "../../pages/blog/[slug]"
 
 const meta: Meta<typeof OutlineModal> = {
-  title: "Blog/Modal/OutlineModal",
+  title: "Components/Modal/OutlineModal",
   component: OutlineModal,
   parameters: {
     layout: "fullscreen",
