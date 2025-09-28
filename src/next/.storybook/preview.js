@@ -1,4 +1,4 @@
-import '../styles/main.scss'
+import "../styles/main.scss"
 
 /** @type { import('@storybook/nextjs-vite').Preview } */
 const preview = {
@@ -14,7 +14,7 @@ const preview = {
       // 'todo' - show a11y violations in the test UI only
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
-      test: `todo`
+      test: "todo"
     }
   },
 }
