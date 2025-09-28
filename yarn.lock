@@ -12867,6 +12867,7 @@ __metadata:
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.6.0"
     uuid: "npm:^8.3.2"
+    vitest: "npm:^3.2.4"
   languageName: unknown
   linkType: soft
 
