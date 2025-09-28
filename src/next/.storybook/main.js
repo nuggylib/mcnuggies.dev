@@ -44,6 +44,7 @@ const config = {
     config.resolve = config.resolve || {}
     config.resolve.alias = config.resolve.alias || {}
     config.resolve.alias["variables"] = resolve(stylesPath, "_variables.scss")
+    config.resolve.alias["mixins"] = resolve(stylesPath, "_mixins.scss")
 
     return config
   }
