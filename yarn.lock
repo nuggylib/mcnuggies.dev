@@ -12851,6 +12851,7 @@ __metadata:
     "@eslint/js": "npm:^9.36.0"
     "@sanity/cli": "npm:^3.49.0"
     "@sanity/image-url": "npm:^1.0.2"
+    "@storybook/nextjs-vite": "npm:^9.1.8"
     "@types/node": "npm:^17.0.21"
     "@typescript-eslint/eslint-plugin": "npm:^8.3.0"
     "@typescript-eslint/parser": "npm:^8.3.0"
