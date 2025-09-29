@@ -7,6 +7,9 @@ sb.mock(import("next/link"))
 // Mock the CustomIcon component and react-inlinesvg
 sb.mock(import("react-inlinesvg"))
 
+// Mock react-github-calendar
+sb.mock(import("react-github-calendar"))
+
 /** @type { import('@storybook/nextjs-vite').Preview } */
 const preview = {
   parameters: {

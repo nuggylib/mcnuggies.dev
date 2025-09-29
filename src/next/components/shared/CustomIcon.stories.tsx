@@ -288,7 +288,6 @@ export const NavigationIcons: Story = {
         width={24}
         alt="Previous"
         onClick={fn()}
-        style={{ cursor: "pointer" }}
       />
       <span style={{ padding: "0 16px", fontSize: "16px" }}>Page Navigation</span>
       <CustomIcon
@@ -297,7 +296,6 @@ export const NavigationIcons: Story = {
         width={24}
         alt="Next"
         onClick={fn()}
-        style={{ cursor: "pointer" }}
       />
     </div>
   ),
