@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 import { Provider } from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
-import { mocked } from "storybook/test"
 import About from "./about"
 import sidebarReducer from "../redux/sidebarSlice"
 
@@ -68,6 +67,11 @@ const mockEmployers = [
         startDate: "2022-01-01",
         endDate: undefined,
         currentJobTitle: true,
+        responsibilities: [
+          "Lead development of React applications",
+          "Mentor junior developers and conduct code reviews",
+          "Architect scalable solutions for high-traffic systems",
+        ],
       },
     ],
   },
@@ -93,6 +97,11 @@ const mockEmployers = [
         startDate: "2020-01-01",
         endDate: "2021-12-31",
         currentJobTitle: false,
+        responsibilities: [
+          "Develop and maintain web applications using React and Node.js",
+          "Collaborate with designers and product managers on feature development",
+          "Write comprehensive unit and integration tests",
+        ],
       },
     ],
   },
@@ -110,38 +119,6 @@ const meta: Meta<typeof About> = {
       </Provider>
     ),
   ],
-  beforeEach: async () => {
-    // Mock the GitHub calendar component
-    const GitHubCalendar = await import("react-github-calendar")
-    mocked(GitHubCalendar.default).mockImplementation(({ username }) => (
-      <div data-testid="github-calendar" style={{
-        padding: "20px",
-        border: "1px solid #ccc",
-        borderRadius: "4px",
-        backgroundColor: "#f8f9fa"
-      }}>
-        <p>GitHub Calendar for: {username}</p>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(53, 1fr)",
-          gap: "2px",
-          marginTop: "10px"
-        }}>
-          {Array.from({ length: 365 }, (_, i) => (
-            <div
-              key={i}
-              style={{
-                width: "10px",
-                height: "10px",
-                backgroundColor: Math.random() > 0.7 ? "#40c463" : "#ebedf0",
-                borderRadius: "2px",
-              }}
-            />
-          ))}
-        </div>
-      </div>
-    ))
-  },
   argTypes: {
     creators: {
       description: "Array of creator data from Sanity CMS",
