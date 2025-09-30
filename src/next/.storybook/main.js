@@ -40,11 +40,22 @@ const config = {
     config.css.preprocessorOptions.scss = config.css.preprocessorOptions.scss || {}
     config.css.preprocessorOptions.scss.includePaths = [stylesPath]
 
+    // Configure CSS modules support
+    config.css.modules = config.css.modules || {}
+    config.css.modules.localsConvention = "camelCaseOnly"
+    config.css.modules.generateScopedName = "[name]__[local]___[hash:base64:5]"
+
     // Also configure the alias for import resolution
     config.resolve = config.resolve || {}
     config.resolve.alias = config.resolve.alias || {}
-    config.resolve.alias["variables"] = resolve(stylesPath, "_variables.scss")
+    config.resolve.alias["main"] = resolve(stylesPath, "main.scss")
+    config.resolve.alias["general"] = resolve(stylesPath, "_general.scss")
+    config.resolve.alias["headings"] = resolve(stylesPath, "_headings.scss")
     config.resolve.alias["mixins"] = resolve(stylesPath, "_mixins.scss")
+    config.resolve.alias["page_about"] = resolve(stylesPath, "_page_about.scss")
+    config.resolve.alias["page_projects"] = resolve(stylesPath, "_page_projects.scss")
+    config.resolve.alias["page_template_article"] = resolve(stylesPath, "_page_template_article.scss")
+    config.resolve.alias["variables"] = resolve(stylesPath, "_variables.scss")
 
     return config
   }

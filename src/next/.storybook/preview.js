@@ -1,14 +1,11 @@
 import "../styles/main.scss"
-import { sb } from "storybook/test"
+import Link from "next/link"
 
-// Mock Next.js Link component
-sb.mock(import("next/link"))
-
-// Mock the CustomIcon component and react-inlinesvg
-sb.mock(import("react-inlinesvg"))
-
-// Mock react-github-calendar
-sb.mock(import("react-github-calendar"))
+// Override Next.js Link component for Storybook
+Object.defineProperty(Link, "default", {
+  configurable: true,
+  value: (props) => <a {...props} />,
+})
 
 /** @type { import('@storybook/nextjs-vite').Preview } */
 const preview = {
