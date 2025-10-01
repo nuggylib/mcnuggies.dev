@@ -66,19 +66,3 @@ export const LongContent: Story = {
     textContent: "This is a much longer piece of content that demonstrates how the feed item component handles extended text. It includes multiple sentences and shows how the component adapts to larger amounts of text content. This could represent a blog post excerpt or a detailed description of an article that would appear in a feed.",
   },
 }
-
-export const BlogPost: Story = {
-  args: {
-    title: "Getting Started with React and TypeScript",
-    href: "/blog/react-typescript-guide",
-    textContent: "Learn how to set up a new React project with TypeScript, including best practices for type safety and component architecture. This comprehensive guide covers everything from initial setup to advanced patterns.",
-  },
-}
-
-export const ProjectShowcase: Story = {
-  args: {
-    title: "Personal Portfolio Website",
-    href: "/projects/portfolio-site",
-    textContent: "A modern, responsive portfolio website built with Next.js, featuring dynamic content management through Sanity CMS and optimized for performance and accessibility.",
-  },
-}

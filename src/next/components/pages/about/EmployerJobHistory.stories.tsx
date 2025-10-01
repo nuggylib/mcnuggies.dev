@@ -101,45 +101,6 @@ const multipleJobsMock = [
   },
 ]
 
-const contractJobMock = [
-  {
-    _id: "job1",
-    _createdAt: "1234",
-    _rev: "",
-    _updatedAt: "1234",
-    _type: "jobTitle" as const,
-    title: "Contract Frontend Developer",
-    startDate: "2023-06-01",
-    endDate: "2023-11-30",
-    currentJobTitle: false,
-    responsibilities: [
-      "Delivered MVP for client's e-commerce platform",
-      "Implemented responsive design with modern CSS",
-      "Integrated with third-party payment APIs",
-    ],
-  },
-]
-
-const internshipJobMock = [
-  {
-    _id: "job1",
-    _createdAt: "1234",
-    _rev: "",
-    _updatedAt: "1234",
-    _type: "jobTitle" as const,
-    title: "Software Engineering Intern",
-    startDate: "2021-06-01",
-    endDate: "2021-08-31",
-    currentJobTitle: false,
-    responsibilities: [
-      "Contributed to open source internal tools",
-      "Learned industry best practices and workflows",
-      "Assisted with bug fixes and feature development",
-      "Participated in daily standups and sprint planning",
-    ],
-  },
-]
-
 export const SingleJob: Story = {
   args: {
     employerName: "TechCorp Inc.",
@@ -194,34 +155,6 @@ export const CurrentJob: Story = {
     docs: {
       description: {
         story: "Example of a current job position with no end date (shows 'Present').",
-      },
-    },
-  },
-}
-
-export const ContractWork: Story = {
-  args: {
-    employerName: "Freelance Client",
-    jobs: contractJobMock,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: "Example of contract or freelance work with a defined start and end date.",
-      },
-    },
-  },
-}
-
-export const Internship: Story = {
-  args: {
-    employerName: "Big Tech Company",
-    jobs: internshipJobMock,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: "Example of an internship position showing typical intern responsibilities.",
       },
     },
   },

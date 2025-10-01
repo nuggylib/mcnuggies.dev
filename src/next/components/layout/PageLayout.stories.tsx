@@ -269,35 +269,3 @@ export const LongContent: Story = {
     },
   },
 }
-
-export const MinimalContent: Story = {
-  args: {
-    pageTitle: "404",
-    useTitleOverlay: false,
-    metaDescription: "Page not found",
-    children: (
-      <div style={{ padding: "4rem 2rem", textAlign: "center", maxWidth: "600px", margin: "0 auto" }}>
-        <h1 style={{ fontSize: "6rem", margin: "0", color: "#999" }}>404</h1>
-        <h2>Page Not Found</h2>
-        <p>The page you&apos;re looking for doesn&apos;t exist.</p>
-        <button style={{
-          background: "#007bff",
-          color: "white",
-          border: "none",
-          padding: "0.75rem 1.5rem",
-          borderRadius: "4px",
-          cursor: "pointer"
-        }}>
-          Go Home
-        </button>
-      </div>
-    ),
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: "Example of a minimal page layout, such as an error page with centered content.",
-      },
-    },
-  },
-}

@@ -48,7 +48,7 @@ export const Languages: React.FC<LanguagesProps> = ({
       const chartData = [] as { language: string, bytes: number, fill: string }[]
       if (languages) {
         Object.keys(languages).forEach(lang => {
-          chartData.push({ language: lang, bytes: languages[lang], fill: GITHUB_LANGUAGE_COLORS[lang].color || `red` })
+          chartData.push({ language: lang, bytes: languages[lang], fill: GITHUB_LANGUAGE_COLORS[lang]?.color || `red` })
         })
       }
       return chartData
@@ -106,7 +106,7 @@ export const Languages: React.FC<LanguagesProps> = ({
                                       className={styles.languageListItem}
                                       key={`lang-list-item-${key.toLowerCase()}-usages`}
                                       style={{
-                                          color: GITHUB_LANGUAGE_COLORS[key].color || `red`
+                                          color: GITHUB_LANGUAGE_COLORS[key]?.color || `red`
                                       }}
                                       onClick={() => window.open(GITHUB_LANGUAGE_COLORS[key].url, `_blank`)}
                                   >
