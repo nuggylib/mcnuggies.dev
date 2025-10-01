@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './OutlineModal.module.scss'
-import { OutlineItem, SeriesOutlineItem } from '../../../pages/blog/[slug]'
+import { OutlineItem, SeriesOutlineItem } from '../../pages/blog/[slug]'
 import Link from 'next/link'
-import kebabCase from '../../../util/kebabCase'
-import { Modal } from '../../shared/modal/Modal'
+import kebabCase from '../../util/kebabCase'
+import { Modal } from '../shared/modal/Modal'
 
 interface OutlineModalProps {
     items: {

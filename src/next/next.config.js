@@ -7,6 +7,15 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, `styles`)],
   },
+  webpack: (config, { webpack }) => {
+    // Exclude Storybook files from the build
+    config.plugins.push(
+      new webpack.IgnorePlugin({
+        resourceRegExp: /\.stories\.(js|jsx|ts|tsx)$/,
+      })
+    );
+    return config;
+  },
   images: {
     remotePatterns: [
       {
