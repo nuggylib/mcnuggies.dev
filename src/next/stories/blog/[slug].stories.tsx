@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 import { Provider } from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
-import BlogPost from "./[slug]"
-import { OutlineItem, SeriesOutlineItem } from "./[slug]"
+import BlogPost from "../../pages/blog/[slug]"
+import { OutlineItem, SeriesOutlineItem } from "../../pages/blog/[slug]"
 import { Article } from "../../types/sanity"
 import sidebarReducer from "../../redux/sidebarSlice"
 

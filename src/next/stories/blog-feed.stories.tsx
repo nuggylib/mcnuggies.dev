@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 import { Provider } from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
-import BlogFeed from "./blog-feed"
+import BlogFeed from "../pages/blog-feed"
 import sidebarReducer from "../redux/sidebarSlice"
 import { SanityBlock, SanityKeyed } from "sanity-codegen"
 

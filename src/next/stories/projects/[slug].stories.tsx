@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 import { Provider } from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
-import ProjectPage from "./[slug]"
+import ProjectPage from "../../pages/projects/[slug]"
 import { Project } from "../../types/sanity"
-import { PrunedDeploymentStatusData, PrunedContributorData } from "./[slug]"
+import { PrunedDeploymentStatusData, PrunedContributorData } from "../../pages/projects/[slug]"
 import { DeploymentState } from "../../components/pages/projects/DeploymentComponent"
 import sidebarReducer from "../../redux/sidebarSlice"
 

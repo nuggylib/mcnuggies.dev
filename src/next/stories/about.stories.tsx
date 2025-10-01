@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 import { Provider } from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
-import About from "./about"
+import About from "../pages/about"
 import sidebarReducer from "../redux/sidebarSlice"
 
 // Create a mock store for Storybook

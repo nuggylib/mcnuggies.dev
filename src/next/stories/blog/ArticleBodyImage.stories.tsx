@@ -1,6 +1,6 @@
 import React from "react"
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
-import { ArticleBodyImage } from "./ArticleBodyImage"
+import { ArticleBodyImage } from "../../pages/blog/ArticleBodyImage"
 
 const meta: Meta<typeof ArticleBodyImage> = {
   title: "Pages/Blog/ArticleBodyImage",
