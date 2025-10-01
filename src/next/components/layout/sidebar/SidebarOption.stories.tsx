@@ -87,15 +87,6 @@ export const LongLabel: Story = {
   },
 }
 
-export const ExternalLink: Story = {
-  args: {
-    option: {
-      label: "GitHub",
-      href: "https://github.com",
-    },
-  },
-}
-
 export const MultipleOptions: Story = {
   decorators: [
     () => (
