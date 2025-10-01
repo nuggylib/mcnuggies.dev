@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 import { Provider } from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
-import ProjectPage from "../../pages/projects/[slug]"
+import ProjectDetailsPage from "../../pages/projects/[slug]"
 import { Project } from "../../types/sanity"
 import { PrunedDeploymentStatusData, PrunedContributorData } from "../../pages/projects/[slug]"
 import { DeploymentState } from "../../components/pages/projects/DeploymentComponent"
@@ -14,9 +14,9 @@ const mockStore = configureStore({
   },
 })
 
-const meta: Meta<typeof ProjectPage> = {
-  title: "Pages/Projects/ProjectPage",
-  component: ProjectPage,
+const meta: Meta<typeof ProjectDetailsPage> = {
+  title: "Pages/Projects/ProjectDetailsPage",
+  component: ProjectDetailsPage,
   decorators: [
     (Story) => (
       <Provider store={mockStore}>
