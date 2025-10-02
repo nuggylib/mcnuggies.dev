@@ -44,30 +44,3 @@ export const Default: Story = {
     },
   },
 }
-
-export const Interactive: Story = {
-  play: async () => {
-    // This story demonstrates the interactive behavior
-    // The menu button should toggle the sidebar when clicked
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: "Interactive version showing the navigation bar with clickable menu button.",
-      },
-    },
-  },
-}
-
-export const DarkNavbar: Story = {
-  parameters: {
-    backgrounds: {
-      default: "dark",
-    },
-    docs: {
-      description: {
-        story: "Navigation bar displayed on a dark background to show the dark variant styling.",
-      },
-    },
-  },
-}

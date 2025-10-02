@@ -22,7 +22,7 @@ const preview = {
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
       test: "todo"
-    }
+    },
   },
 }
 

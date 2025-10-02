@@ -29,6 +29,7 @@ export const PageLayout = ({
           <link rel="icon" href="/mcnuggies.ico" />
         </Head>
         <Script defer data-domain="mcnuggies.dev" src="https://plausible.io/js/script.js" />
+        {/* TODO: Remove this since it's Vercel stuff - we're gutting all Vercel-specific logic */}
         <SpeedInsights />
         <SiteNavigation />
         <Sidebar
