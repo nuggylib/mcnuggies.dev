@@ -6,14 +6,15 @@ import GlobalSearch from "../GlobalSearch"
 const SiteNavigation = () => {
     return (
       <Navbar variant="dark" sticky="top" className={styles.navBar}>
-
-        <Navbar.Brand className={styles.appIcon} href='/'>
-          <CustomIcon
+        <div className={styles.appIcon}>
+          <Navbar.Brand href='/'>
+            <CustomIcon
                   fileName='mcnuggies_logo_full'
                   height={30}
                   width={180}
                 />
-        </Navbar.Brand>
+          </Navbar.Brand>
+        </div>
         <div className={styles.searchWrapper}>
           <GlobalSearch />
         </div>

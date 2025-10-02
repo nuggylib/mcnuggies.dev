@@ -39,7 +39,7 @@ const meta: Meta<typeof Sidebar> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: "A navigation sidebar component that displays menu options. Uses Redux for managing open/closed state and includes click-outside functionality to close when open.",
+        component: "A navigation sidebar component that displays menu options with a floating circular toggle button stuck to the border. Uses Redux for managing open/closed state and includes click-outside functionality to close when open.",
       },
     },
   },
@@ -53,7 +53,7 @@ export const Closed: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The sidebar in its default closed state.",
+        story: "The sidebar in its default closed state. The circular toggle button is positioned at the center of the border line.",
       },
     },
   },
@@ -72,7 +72,7 @@ export const Open: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The sidebar in its open state, showing all navigation options.",
+        story: "The sidebar in its open state, showing all navigation options. Click the circular toggle button to close the sidebar.",
       },
     },
   },
