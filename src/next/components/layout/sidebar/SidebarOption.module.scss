@@ -12,7 +12,17 @@
     transition: 0.3s ease;
     &:hover {
         cursor: pointer;
-        background-color: vars.$gray-800;
+        background-color: vars.$brand-primary;
         transition: 0.3s ease;
+        span {
+            color: vars.$gray-A1;
+        }
+    }
+}
+
+.link {
+    span {
+        transition: 0.3s ease;
+        color: vars.$brand-secondary;
     }
 }

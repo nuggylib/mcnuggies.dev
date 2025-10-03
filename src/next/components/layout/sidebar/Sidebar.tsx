@@ -71,15 +71,17 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
 
     return (
       <div id='sidebar' className={`${styles.sidebarContainer} ${isSidebarOpen ? undefined : styles.closed}`}>
-        {SIDEBAR_OPTIONS.map(option => {
-                const key = kebabCase(option.option.label)
-                return (
-                  <SidebarOption
-                        key={`option-${key}`}
-                        option={option.option}
-                    />
-                )
-            })}
+        <div className={styles.menuContent}>
+          {SIDEBAR_OPTIONS.map(option => {
+                  const key = kebabCase(option.option.label)
+                  return (
+                    <SidebarOption
+                          key={`option-${key}`}
+                          option={option.option}
+                      />
+                  )
+              })}
+        </div>
         <button
           id="sidebar-toggle-button"
           className={styles.toggleButton}

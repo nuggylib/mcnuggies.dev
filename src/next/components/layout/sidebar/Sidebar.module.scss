@@ -7,23 +7,14 @@
     background-color: vars.$gray-A1;
     border-right: 1px solid vars.$gray-300;
     height: 100%;
-    overflow: hidden;
-    transition: 0.5s ease;
-    a {
-        text-decoration: none;
-    }
-    >:first-child {
-        margin-top: 1rem;
-    }
+    overflow: visible;
+    transition: 0.3s ease;
+
     @media  screen and (max-width: vars.$laptop) {
         width: 60%;
     }
     @media screen and (min-width: vars.$laptop) {
         width: 25%;
-    }
-
-    >:not(:last-child) {
-        margin-bottom: 1rem;
     }
 
     &.closed {
@@ -32,10 +23,27 @@
 
 }
 
+.menuContent {
+    height: 100%;
+    overflow: hidden;
+
+    a {
+        text-decoration: none;
+    }
+
+    >:first-child {
+        margin-top: 1rem;
+    }
+
+    >:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
+
 .toggleButton {
     position: absolute;
     top: 4rem;
-    right: 0;
+    right: -1px;
     transform: translate(50%, -50%);
     width: 36px;
     height: 36px;
@@ -47,7 +55,7 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 1001;
+    z-index: 1;
 
     &:hover {
         background-color: vars.$gray-300;

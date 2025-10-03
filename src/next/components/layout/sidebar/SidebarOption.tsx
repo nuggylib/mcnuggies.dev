@@ -23,7 +23,7 @@ const SidebarOption: FunctionComponent<SidebarOptionConfig> = ({
   const dispatch = useDispatch()
     return (
       <div className={styles.container} id="sidebar-option">
-        <Link href={option.to!} passHref onClick={() => dispatch(toggleShowSidebar())}>
+        <Link className={styles.link} href={option.to!} passHref onClick={() => dispatch(toggleShowSidebar())}>
           <div className='sidebar-option-row-content'>
             <span>
               {option.label}
