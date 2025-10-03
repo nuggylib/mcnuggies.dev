@@ -1,4 +1,5 @@
 import "../styles/main.scss"
+import "bootstrap/dist/css/bootstrap.min.css"
 import Link from "next/link"
 
 // Override Next.js Link component for Storybook

@@ -2,12 +2,9 @@
 
 .container {
     padding-left: 1rem;
-    line-height: 40px;
+    height: 40px;
     font-size: 20px;
     font-weight: 400;
-    span {
-        color: vars.$gray-100;
-    }
     background-color: inherit;
     transition: 0.3s ease;
     &:hover {
@@ -17,12 +14,38 @@
         span {
             color: vars.$gray-A1;
         }
+        .icon {
+            color: vars.$gray-A1;
+        }
     }
+}
+
+.rowContent {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon {
+    transition: 0.3s ease;
+    color: vars.$brand-secondary;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    width: 24px;
 }
 
 .link {
     span {
         transition: 0.3s ease;
-        color: vars.$brand-secondary;
+        position: relative;
+        top: 3px;
     }
+}
+
+.closed {
+    display: none;
 }

@@ -4,7 +4,6 @@
 .sidebarContainer {
     z-index: 1000;
     position: fixed;
-    background-color: vars.$gray-A1;
     border-right: 1px solid vars.$gray-300;
     height: 100%;
     overflow: visible;
@@ -14,7 +13,7 @@
         width: 60%;
     }
     @media screen and (min-width: vars.$laptop) {
-        width: 25%;
+        width: 15%;
     }
 
     &.closed {

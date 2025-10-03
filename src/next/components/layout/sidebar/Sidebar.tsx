@@ -13,24 +13,28 @@ const SIDEBAR_OPTIONS = [
     {
         option: {
             label: `Home`,
+            iconFileName: `bootstrap-house-door`,
             to: `/`
         }
     },
     {
         option: {
             label: `Blog`,
+            iconFileName: `bootstrap-book`,
             to: `/blog-feed`
         }
     },
     {
         option: {
             label: `Projects`,
+            iconFileName: `bootstrap-hammer`,
             to: `/projects`
         }
     },
     {
         option: {
             label: `About`,
+            iconFileName: `bootstrap-info-circle`,
             to: `/about`
         }
     }
@@ -40,8 +44,6 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
 
     const dispatch = useDispatch()
     const isSidebarOpen = useSelector((state: any) => state.nav.showSidebar)
-
-
 
     useEffect(() => {
         /**

@@ -3293,6 +3293,7 @@ __metadata:
     "@storybook/addon-a11y": "npm:^9.1.8"
     "@storybook/addon-docs": "npm:^9.1.8"
     "@storybook/addon-mcp": "npm:^0.0.4"
+    "@storybook/addon-styling-webpack": "npm:^2.0.0"
     "@storybook/addon-vitest": "npm:^9.1.8"
     "@storybook/nextjs-vite": "npm:^9.1.8"
     "@types/next": "npm:^9.0.0"
@@ -5412,6 +5413,16 @@ __metadata:
   peerDependencies:
     storybook: "*"
   checksum: 10c0/a382d58936ebaaf31cdde6df10eba9c01f3153926dba228efc0ff0a79f438ec6f7cd36ed0ee9285493aa79671b1ac612d5cbc35a1884e4b4ac671732502159b3
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-styling-webpack@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@storybook/addon-styling-webpack@npm:2.0.0"
+  peerDependencies:
+    storybook: ^9.0.0
+    webpack: ^5.0.0
+  checksum: 10c0/1be590b99d74bdb422f8fb88eb510d0e961915c3e93371c146435fa072158280b0701188170592b62a858993363cc989e0cfb060aaa1c0ec8c95d119cf16b099
   languageName: node
   linkType: hard
 
