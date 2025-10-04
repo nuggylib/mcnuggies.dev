@@ -1,0 +1,40 @@
+@use 'variables' as vars;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.imageContainer {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 1rem;
+
+    img {
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.profession {
+    font-size: 1.1rem;
+    color: vars.$gray-400;
+    margin-bottom: 0.75rem;
+}
+
+.bio {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    max-width: 400px;
+}

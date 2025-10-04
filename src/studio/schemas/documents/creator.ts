@@ -68,6 +68,13 @@ export default {
       validation: (Rule) => Rule.required(),
       ...richTextFieldConfig,
     },
+    {
+      name: `currentEmployer`,
+      title: `Current Employer`,
+      type: `reference`,
+      to: [{ type: `employer` }],
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     select: {
