@@ -73,7 +73,6 @@ export default {
       title: `Current Employer`,
       type: `reference`,
       to: [{ type: `employer` }],
-      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {

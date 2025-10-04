@@ -143,6 +143,13 @@ export interface Creator extends SanityDocument {
         hotspot?: SanityImageHotspot;
       }>
   >;
+
+  /**
+   * Current Employer — `reference`
+   *
+   *
+   */
+  currentEmployer?: SanityReference<Employer>;
 }
 
 /**

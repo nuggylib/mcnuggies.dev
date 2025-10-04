@@ -5,10 +5,13 @@ import CreatorsGrid from '../components/pages/about/CreatorsGrid'
 import sanityClient from '../sanity/client'
 import { Creator } from '../types/sanity'
 
-export type CreatorProps = Creator & {
+export type CreatorProps = Partial<Creator> & {
   imageUrl: string
   imageBase64: string
-  currentEmployerName: string
+  currentEmployerName?: string
+  currentEmployerJobTitle?: string
+  currentEmployerImage?: string
+  currentEmployerImageBase64?: string
 }
 interface AboutPageProps {
   creators: CreatorProps[]
@@ -16,7 +19,6 @@ interface AboutPageProps {
 
 const About: NextPage<AboutPageProps> = (props) => {
   const { creators } = props
-  console.log(`CREATORS: `, creators)
     return (
       <PageLayout
                 pageTitle='About'
@@ -41,7 +43,9 @@ export async function getStaticProps() {
           _id,
           name,
           "currentEmployerName": currentEmployer->name,
+          "currentEmployerJobTitle": currentEmployer->jobTitles[-1]->title,
           "currentEmployerImage": currentEmployer->image.asset->url,
+          "currentEmployerImageBase64": currentEmployer->image.asset->metadata.lqip,
           "imageUrl": image.asset->url,
           "imageBase64": image.asset->metadata.lqip,
           githubUrl,

@@ -1,28 +1,24 @@
 import React from 'react'
 import Image from 'next/image'
-import { PortableText } from '@portabletext/react'
 import CreatorSocials from './CreatorSocials'
 import styles from './CreatorCard.module.scss'
+import { CreatorProps } from '../../../pages/about'
 
-interface CreatorCardProps {
-    name: string
-    imageUrl: string
-    imageBase64: string
-    profession?: string
-    bio?: any[]
-    githubUrl?: string
-    linkedInUrl?: string
-}
-
-const CreatorCard: React.FC<CreatorCardProps> = ({
+const CreatorCard: React.FC<CreatorProps> = ({
     name,
     imageUrl,
     imageBase64,
-    profession,
-    bio,
+    currentEmployerName,
+    currentEmployerJobTitle,
+    currentEmployerImage,
+    currentEmployerImageBase64,
     githubUrl,
     linkedInUrl
 }) => {
+  console.log(currentEmployerName)
+  console.log(currentEmployerJobTitle)
+  console.log(currentEmployerImage)
+  console.log(currentEmployerImageBase64)
     return (
       <div className={styles.card}>
         <div className={styles.imageContainer}>
@@ -34,14 +30,26 @@ const CreatorCard: React.FC<CreatorCardProps> = ({
                 blurDataURL={imageBase64}
               />
         </div>
-        <h3 className={styles.name}>{name}</h3>
-        {profession && <p className={styles.profession}>{profession}</p>}
-        {bio && (
-          <div className={styles.bio}>
-            <PortableText value={bio} />
-          </div>
-            )}
-        <CreatorSocials githubUrl={githubUrl} linkedInUrl={linkedInUrl} />
+        <div className={styles.creatorDetails}>
+          <span className={styles.name}>{name}</span>
+          {currentEmployerName && currentEmployerImage && (
+            <div className={styles.currentJob}>
+              <span>{currentEmployerJobTitle} @</span>
+              <Image
+                src={currentEmployerImage}
+                height={24}
+                width={24}
+                alt={`${currentEmployerName} logo`}
+                placeholder='blur'
+                blurDataURL={currentEmployerImageBase64}
+              />
+              <span>{currentEmployerName}</span>
+            </div>
+          )}
+        </div>
+        <div className={styles.creatorSocials}>
+          <CreatorSocials githubUrl={githubUrl} linkedInUrl={linkedInUrl} />
+        </div>
       </div>
     )
 }

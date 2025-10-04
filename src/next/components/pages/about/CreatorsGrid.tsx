@@ -13,10 +13,13 @@ const CreatorsGrid: React.FC<CreatorsGridProps> = ({ creators }) => {
         {creators.map(creator => (
           <CreatorCard
                 key={creator._id}
-                name={creator.name || ``}
+                name={creator.name}
                 imageUrl={creator.imageUrl}
                 imageBase64={creator.imageBase64}
-                profession={creator.profession}
+                currentEmployerName={creator.currentEmployerName}
+                currentEmployerJobTitle={creator.currentEmployerJobTitle}
+                currentEmployerImage={creator.currentEmployerImage}
+                currentEmployerImageBase64={creator.currentEmployerImageBase64}
                 githubUrl={creator.githubUrl}
                 linkedInUrl={creator.linkedInUrl}
               />
