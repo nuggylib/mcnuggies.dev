@@ -16,8 +16,8 @@ const CreatorSocials: React.FC<CreatorSocialsProps> = ({
         {!!githubUrl && (
           <CustomIcon
                   fileName='logo-github'
-                  height={32}
-                  width={32}
+                  height={22}
+                  width={22}
                   className='github-logo'
                   onClick={() => window.open(githubUrl!, `_blank`)}
                 />
@@ -25,8 +25,8 @@ const CreatorSocials: React.FC<CreatorSocialsProps> = ({
         {!!linkedInUrl && (
           <CustomIcon
                   fileName='logo-linkedin'
-                  height={32}
-                  width={32}
+                  height={22}
+                  width={22}
                   className='linkedin-logo'
                   onClick={() => window.open(linkedInUrl!, `_blank`)}
                 />

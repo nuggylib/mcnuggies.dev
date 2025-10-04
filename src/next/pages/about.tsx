@@ -9,6 +9,7 @@ export type CreatorProps = Partial<Creator> & {
   imageUrl: string
   imageBase64: string
   currentEmployerName?: string
+  currentEmployerHomePage?: string
   currentEmployerJobTitle?: string
   currentEmployerImage?: string
   currentEmployerImageBase64?: string
@@ -42,7 +43,9 @@ export async function getStaticProps() {
       *[_type == "creator"]{
           _id,
           name,
+          email,
           "currentEmployerName": currentEmployer->name,
+          "currentEmployerHomePage": currentEmployer->homePage,
           "currentEmployerJobTitle": currentEmployer->jobTitles[-1]->title,
           "currentEmployerImage": currentEmployer->image.asset->url,
           "currentEmployerImageBase64": currentEmployer->image.asset->metadata.lqip,

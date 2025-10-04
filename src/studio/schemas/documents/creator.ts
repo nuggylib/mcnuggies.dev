@@ -22,6 +22,12 @@ export default {
       },
     },
     {
+      name: `email`,
+      validation: (Rule) => Rule.required(),
+      title: `Email`,
+      type: `string`,
+    },
+    {
       name: `image`,
       title: `Image`,
       type: `image`,

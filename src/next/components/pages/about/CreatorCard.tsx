@@ -6,9 +6,11 @@ import { CreatorProps } from '../../../pages/about'
 
 const CreatorCard: React.FC<CreatorProps> = ({
     name,
+    email,
     imageUrl,
     imageBase64,
     currentEmployerName,
+    currentEmployerHomePage,
     currentEmployerJobTitle,
     currentEmployerImage,
     currentEmployerImageBase64,
@@ -34,20 +36,24 @@ const CreatorCard: React.FC<CreatorProps> = ({
           <span className={styles.name}>{name}</span>
           {currentEmployerName && currentEmployerImage && (
             <div className={styles.currentJob}>
-              <span>{currentEmployerJobTitle} @</span>
-              <Image
-                src={currentEmployerImage}
-                height={24}
-                width={24}
-                alt={`${currentEmployerName} logo`}
-                placeholder='blur'
-                blurDataURL={currentEmployerImageBase64}
-              />
-              <span>{currentEmployerName}</span>
+              <span className={styles.jobTitle}>{currentEmployerJobTitle}</span>
+              <div className={styles.employer}>
+                {/* <span className={styles.at}>@</span> */}
+                <Image
+                  src={currentEmployerImage}
+                  height={24}
+                  width={24}
+                  alt={`${currentEmployerName} logo`}
+                  placeholder='blur'
+                  blurDataURL={currentEmployerImageBase64}
+                />
+                <span className={styles.companyName}><a href={currentEmployerHomePage}>{currentEmployerName}</a></span>
+              </div>
             </div>
           )}
         </div>
         <div className={styles.creatorSocials}>
+          <span><a href={`mailto:${email}`}>{email}</a></span>
           <CreatorSocials githubUrl={githubUrl} linkedInUrl={linkedInUrl} />
         </div>
       </div>

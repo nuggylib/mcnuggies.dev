@@ -75,6 +75,13 @@ export interface Creator extends SanityDocument {
   slug?: { _type: `slug`; current: string };
 
   /**
+   * Email — `string`
+   *
+   *
+   */
+  email?: string;
+
+  /**
    * Image — `image`
    *
    *

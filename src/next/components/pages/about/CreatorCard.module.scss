@@ -27,8 +27,34 @@
 
 .currentJob {
     display: block;
+    .jobTitle {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+        margin-bottom: 0.25rem;
+    }
+    .employer {
+        display: inline-flex;
+        span {
+            margin-bottom: 0.25rem;
+        }
+        .at {
+            margin-right: 0.25rem;
+        }
+        .companyName {
+            margin-left: 0.25rem;
+        }
+    }
 }
 
 .profession {
     color: vars.$gray-400;
+}
+
+.creatorSocials {
+    span {
+        margin-bottom: 0.75rem;
+    }
 }

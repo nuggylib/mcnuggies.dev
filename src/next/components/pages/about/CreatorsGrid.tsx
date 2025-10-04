@@ -14,6 +14,8 @@ const CreatorsGrid: React.FC<CreatorsGridProps> = ({ creators }) => {
           <CreatorCard
                 key={creator._id}
                 name={creator.name}
+                currentEmployerHomePage={creator.currentEmployerHomePage}
+                email={creator.email}
                 imageUrl={creator.imageUrl}
                 imageBase64={creator.imageBase64}
                 currentEmployerName={creator.currentEmployerName}
