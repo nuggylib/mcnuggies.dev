@@ -23,6 +23,12 @@
         font-weight: bold;
         margin-bottom: 0;
         text-decoration: none;
+        transition: 0.2s ease;
+        color: vars.$brand-secondary !important;
+        &:hover {
+            transition: 0.2s ease;
+            color: vars.$brand-primary !important;
+        }
     }
 }
 
