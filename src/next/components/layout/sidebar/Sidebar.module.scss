@@ -8,6 +8,7 @@
     height: 100%;
     overflow: visible;
     transition: 0.3s ease;
+    background-color: vars.$gray-A1;
 
     @media  screen and (max-width: vars.$laptop) {
         width: 60%;
@@ -17,7 +18,7 @@
     }
 
     &.closed {
-        width: 48px;
+        width: 64px;
     }
 
 }
