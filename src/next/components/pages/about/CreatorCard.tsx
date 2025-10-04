@@ -33,12 +33,11 @@ const CreatorCard: React.FC<CreatorProps> = ({
               />
         </div>
         <div className={styles.creatorDetails}>
-          <span className={styles.name}>{name}</span>
+          <a className={styles.name}>{name}</a>
           {currentEmployerName && currentEmployerImage && (
             <div className={styles.currentJob}>
               <span className={styles.jobTitle}>{currentEmployerJobTitle}</span>
-              <div className={styles.employer}>
-                {/* <span className={styles.at}>@</span> */}
+              <button className={styles.employer} onClick={() => window.open(currentEmployerHomePage, `_blank`)}>
                 <Image
                   src={currentEmployerImage}
                   height={24}
@@ -47,8 +46,8 @@ const CreatorCard: React.FC<CreatorProps> = ({
                   placeholder='blur'
                   blurDataURL={currentEmployerImageBase64}
                 />
-                <span className={styles.companyName}><a href={currentEmployerHomePage}>{currentEmployerName}</a></span>
-              </div>
+                <span className={styles.companyName}>{currentEmployerName}</span>
+              </button>
             </div>
           )}
         </div>

@@ -22,11 +22,14 @@
         font-size: 1.3rem;
         font-weight: bold;
         margin-bottom: 0;
+        text-decoration: none;
     }
 }
 
 .currentJob {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     .jobTitle {
         display: block;
         white-space: nowrap;
@@ -37,6 +40,7 @@
     }
     .employer {
         display: inline-flex;
+        align-items: center;
         span {
             margin-bottom: 0.25rem;
         }
@@ -47,10 +51,6 @@
             margin-left: 0.25rem;
         }
     }
-}
-
-.profession {
-    color: vars.$gray-400;
 }
 
 .creatorSocials {
