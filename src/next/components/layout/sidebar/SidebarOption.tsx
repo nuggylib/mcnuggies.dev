@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import React, { FunctionComponent } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { toggleShowSidebar } from "../../../redux/sidebarSlice"
+import { useSelector } from 'react-redux'
 import styles from './SidebarOption.module.scss'
 import CustomIcon from '../../shared/CustomIcon'
 import cs from 'clsx'
@@ -26,11 +25,11 @@ export interface SidebarOptionConfig {
 const SidebarOption: FunctionComponent<SidebarOptionConfig> = ({
     option
 }) => {
-  const dispatch = useDispatch()
   const isSidebarOpen = useSelector((state: any) => state.nav.showSidebar)
+
     return (
       <div className={styles.container} id="sidebar-option">
-        <Link className={styles.link} href={option.to!} passHref onClick={() => dispatch(toggleShowSidebar())}>
+        <Link className={styles.link} href={option.to!} passHref>
           <div className={styles.rowContent}>
             <div className={styles.iconContainer}>
               <CustomIcon

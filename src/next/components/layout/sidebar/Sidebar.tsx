@@ -71,8 +71,24 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
 
 
 
+    const handleSidebarClick = (e: React.MouseEvent) => {
+        // Only expand when clicking empty space and sidebar is closed
+        // Check if click target is not a link, sidebar option, or toggle button
+        const target = e.target as HTMLElement
+        const isLinkOrOption = target.closest(`a`) || target.closest(`#sidebar-option`)
+        const isToggleButton = target.closest(`#sidebar-toggle-button`)
+
+        if (!isSidebarOpen && !isLinkOrOption && !isToggleButton) {
+            dispatch(toggleShowSidebar())
+        }
+    }
+
     return (
-      <div id='sidebar' className={`${styles.sidebarContainer} ${isSidebarOpen ? undefined : styles.closed}`}>
+      <div
+        id='sidebar'
+        className={`${styles.sidebarContainer} ${isSidebarOpen ? undefined : styles.closed}`}
+        onClick={handleSidebarClick}
+      >
         <div className={styles.menuContent}>
           {SIDEBAR_OPTIONS.map(option => {
                   const key = kebabCase(option.option.label)
