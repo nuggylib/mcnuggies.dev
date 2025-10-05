@@ -58,6 +58,7 @@ export async function getStaticProps() {
           openToWork,
           profession,
           githubUsername,
+          slug
       }
     `)
 

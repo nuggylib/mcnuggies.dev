@@ -24,6 +24,7 @@ const CreatorsGrid: React.FC<CreatorsGridProps> = ({ creators }) => {
                 currentEmployerImageBase64={creator.currentEmployerImageBase64}
                 githubUrl={creator.githubUrl}
                 linkedInUrl={creator.linkedInUrl}
+                slug={creator.slug}
               />
             ))}
       </div>

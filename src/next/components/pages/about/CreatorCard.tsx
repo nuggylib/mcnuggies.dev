@@ -15,12 +15,9 @@ const CreatorCard: React.FC<CreatorProps> = ({
     currentEmployerImage,
     currentEmployerImageBase64,
     githubUrl,
-    linkedInUrl
+    linkedInUrl,
+    slug,
 }) => {
-  console.log(currentEmployerName)
-  console.log(currentEmployerJobTitle)
-  console.log(currentEmployerImage)
-  console.log(currentEmployerImageBase64)
     return (
       <div className={styles.card}>
         <div className={styles.imageContainer}>
@@ -33,7 +30,7 @@ const CreatorCard: React.FC<CreatorProps> = ({
               />
         </div>
         <div className={styles.creatorDetails}>
-          <a className={styles.name}>{name}</a>
+          <a href={`/about/${slug!.current.toLowerCase()}`} className={styles.name}>{name}</a>
           {currentEmployerName && currentEmployerImage && (
             <div className={styles.currentJob}>
               <span className={styles.jobTitle}>{currentEmployerJobTitle}</span>
