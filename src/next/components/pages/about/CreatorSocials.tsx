@@ -15,16 +15,18 @@ const CreatorSocials: React.FC<CreatorSocialsProps> = ({
     return (
       <div className={styles.container}>
         {!!githubUrl && (
-          <GitHubLogo
-            githubUrl={githubUrl}
-            size={22}
-          />
+          <button onClick={() => window.open(githubUrl, `_blank`)} className={styles.btn}>
+            <GitHubLogo
+              size={22}
+            />
+          </button>
               )}
         {!!linkedInUrl && (
-          <LinkedInLogo
-            linkedInUrl={linkedInUrl}
-            size={22}
-          />
+          <button onClick={() => window.open(linkedInUrl, `_blank`)} className={styles.btn}>
+            <LinkedInLogo
+              size={22}
+            />
+          </button>
               )}
       </div>
     )

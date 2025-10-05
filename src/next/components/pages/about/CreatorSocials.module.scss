@@ -8,7 +8,11 @@
     >:not(:last-child) {
         margin-right: 0.5rem;
     }
-    >:hover {
-        cursor: pointer;
+}
+
+.btn {
+    border: none;
+    &:hover {
+        border: none;
     }
 }
