@@ -9,7 +9,13 @@
 .creatorMetadata {
     display: flex;
     flex-direction: column;
+}
+
+.metadataFields {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 
 .socialLink {

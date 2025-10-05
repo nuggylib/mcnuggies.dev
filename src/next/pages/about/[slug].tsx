@@ -57,27 +57,29 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
             <h1 className='creator-name'>
               {creator.name!}
             </h1>
-            <span className={styles.yearsExperience}>🧠 {getYearsSinceDate(new Date(creator.careerStartDate!))} years experience</span>
-            <div className={styles.socialLink}>
-              <CustomIcon
-                fileName='bootstrap-envelope-at'
-                height={22}
-                width={22}
-                />
-              <a href={`mailto:${creator.email}`}>{creator.email}</a>
+            <div className={styles.metadataFields}>
+              <span>🧠 {getYearsSinceDate(new Date(creator.careerStartDate!))} years experience</span>
+              <div className={styles.socialLink}>
+                <CustomIcon
+                  fileName='bootstrap-envelope-at'
+                  height={22}
+                  width={22}
+                  />
+                <a href={`mailto:${creator.email}`}>{creator.email}</a>
+              </div>
+              {creator.linkedInUrl && <button onClick={() => window.open(creator.linkedInUrl, `_blank`)} className={styles.socialLink}>
+                <LinkedInLogo
+                  size={22}
+                  />
+                <span>{creator.linkedInUsername}</span>
+              </button>}
+              {creator.githubUrl && <button onClick={() => window.open(creator.githubUrl, `_blank`)} className={styles.socialLink}>
+                <GitHubLogo
+                  size={22}
+                  />
+                <span>{creator.githubUsername}</span>
+              </button>}
             </div>
-            {creator.linkedInUrl && <button onClick={() => window.open(creator.linkedInUrl, `_blank`)} className={styles.socialLink}>
-              <LinkedInLogo
-                size={22}
-                />
-              <span>{creator.linkedInUsername}</span>
-            </button>}
-            {creator.githubUrl && <button onClick={() => window.open(creator.githubUrl, `_blank`)} className={styles.socialLink}>
-              <GitHubLogo
-                size={22}
-                />
-              <span>{creator.githubUsername}</span>
-            </button>}
           </div>
         </div>
         <div className={styles.bio}>
