@@ -57,7 +57,7 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
             <h1 className='creator-name'>
               {creator.name!}
             </h1>
-            <span>🧠 {getYearsSinceDate(new Date(creator.careerStartDate!))} years experience</span>
+            <span className={styles.yearsExperience}>🧠 {getYearsSinceDate(new Date(creator.careerStartDate!))} years experience</span>
             <div className={styles.socialLink}>
               <CustomIcon
                 fileName='bootstrap-envelope-at'
@@ -87,7 +87,12 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
         </div>
         {creator.githubUsername && <div className={styles.githubActivity}>
           <h2>GitHub Activity</h2>
-          <GitHubCalendar colorScheme="light" username={creator.githubUsername} />
+          <GitHubCalendar
+            colorScheme="light"
+            username={creator.githubUsername}
+            blockSize={10}
+            fontSize={12}
+          />
         </div>}
         <div className='work-history'>
           <div className='section-title'>

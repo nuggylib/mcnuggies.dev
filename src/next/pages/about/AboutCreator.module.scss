@@ -25,4 +25,20 @@
 
 .githubActivity {
     margin-bottom: 2rem;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    // Ensure calendar fits on screen without horizontal scroll
+    :global(.react-activity-calendar) {
+        max-width: 100%;
+        overflow-x: auto;
+
+        // Make it more compact like GitHub's
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+    }
 }
