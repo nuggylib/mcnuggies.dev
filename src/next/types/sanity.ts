@@ -108,6 +108,13 @@ export interface Creator extends SanityDocument {
   githubUrl?: string;
 
   /**
+   * LinkedIn Username — `string`
+   *
+   *
+   */
+  linkedInUsername?: string;
+
+  /**
    * LinkedIn — `url`
    *
    *

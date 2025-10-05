@@ -46,6 +46,11 @@ export default {
       type: `url`,
     },
     {
+      title: `LinkedIn Username`,
+      name: `linkedInUsername`,
+      type: `string`,
+    },
+    {
       title: `LinkedIn`,
       name: `linkedInUrl`,
       type: `url`,

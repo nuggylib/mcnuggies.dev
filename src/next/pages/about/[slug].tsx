@@ -8,6 +8,9 @@ import GitHubCalendar from "react-github-calendar"
 import { EmployerDetails } from "../../components/pages/about/EmployerDetails"
 import kebabCase from "../../util/kebabCase"
 import styles from './AboutCreator.module.scss'
+import { LinkedInLogo } from "../../components/shared/icons/LinkedInLogo"
+import { GitHubLogo } from "../../components/shared/icons/GitHubLogo"
+import CustomIcon from "../../components/shared/CustomIcon"
 
 type EmployerProps = Employer & {
     imageUrl: string
@@ -50,20 +53,41 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
             imageUrl={creator.imageUrl}
             base64Image={creator.imageBase64}
           />
-          <div>
+          <div className={styles.creatorMetadata}>
             <h1 className='creator-name'>
               {creator.name!}
             </h1>
-            <p>{getYearsSinceDate(new Date(creator.careerStartDate!))} years experience</p>
-            <a href={`mailto:${creator.email}`}>{creator.email}</a>
+            <span>{getYearsSinceDate(new Date(creator.careerStartDate!))} years experience</span>
+            <div className={styles.socialLink}>
+              <CustomIcon
+                fileName='bootstrap-envelope-at'
+                height={22}
+                width={22}
+                />
+              <a href={`mailto:${creator.email}`}>{creator.email}</a>
+            </div>
+            {creator.linkedInUrl && <div className={styles.socialLink}>
+              <LinkedInLogo
+                    linkedInUrl={creator.linkedInUrl}
+                    size={22}
+                />
+              <span>{creator.linkedInUsername}</span>
+            </div>}
+            {creator.githubUrl && <div className={styles.socialLink}>
+              <GitHubLogo
+                    githubUrl={creator.githubUrl}
+                    size={22}
+                />
+              <span>{creator.githubUsername}</span>
+            </div>}
           </div>
         </div>
-        <div className='creator-bio'>
+        <div className={styles.bio}>
           <PortableText
             value={creator.bio!}
             />
         </div>
-        {creator.githubUsername && <div className='github-activity'>
+        {creator.githubUsername && <div className={styles.githubActivity}>
           <h2>GitHub Activity</h2>
           <GitHubCalendar colorScheme="light" username={creator.githubUsername} />
         </div>}
@@ -111,6 +135,7 @@ export async function getStaticProps() {
         "imageBase64": image.asset->metadata.lqip,
         githubUrl,
         githubUsername,
+        linkedInUsername,
         linkedInUrl,
     } 
     `)
