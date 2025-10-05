@@ -57,7 +57,7 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
             <h1 className='creator-name'>
               {creator.name!}
             </h1>
-            <span>{getYearsSinceDate(new Date(creator.careerStartDate!))} years experience</span>
+            <span>🧠 {getYearsSinceDate(new Date(creator.careerStartDate!))} years experience</span>
             <div className={styles.socialLink}>
               <CustomIcon
                 fileName='bootstrap-envelope-at'
@@ -66,20 +66,18 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
                 />
               <a href={`mailto:${creator.email}`}>{creator.email}</a>
             </div>
-            {creator.linkedInUrl && <div className={styles.socialLink}>
+            {creator.linkedInUrl && <button onClick={() => window.open(creator.linkedInUrl, `_blank`)} className={styles.socialLink}>
               <LinkedInLogo
-                    linkedInUrl={creator.linkedInUrl}
-                    size={22}
+                size={22}
                 />
               <span>{creator.linkedInUsername}</span>
-            </div>}
-            {creator.githubUrl && <div className={styles.socialLink}>
+            </button>}
+            {creator.githubUrl && <button onClick={() => window.open(creator.githubUrl, `_blank`)} className={styles.socialLink}>
               <GitHubLogo
-                    githubUrl={creator.githubUrl}
-                    size={22}
+                size={22}
                 />
               <span>{creator.githubUsername}</span>
-            </div>}
+            </button>}
           </div>
         </div>
         <div className={styles.bio}>
