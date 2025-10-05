@@ -45,17 +45,15 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
             // TODO: Use the creator's name
             metaDescription={`Creator details for ${creator.name}`}
         >
-        <div className='maintainer-name-and-title'>
-          <h3 className='creator-name'>
-            {creator.name!}
-          </h3>
-        </div>
         <div className={styles.creatorDetails}>
           <CreatorImage
             imageUrl={creator.imageUrl}
             base64Image={creator.imageBase64}
           />
           <div>
+            <h1 className='creator-name'>
+              {creator.name!}
+            </h1>
             <p>{getYearsSinceDate(new Date(creator.careerStartDate!))} years experience</p>
             <a href={`mailto:${creator.email}`}>{creator.email}</a>
           </div>

@@ -1,6 +1,7 @@
 import React from 'react'
-import CustomIcon from '../../shared/CustomIcon'
 import styles from './CreatorSocials.module.scss'
+import { GitHubLogo } from '../../shared/icons/GitHubLogo'
+import { LinkedInLogo } from '../../shared/icons/LinkedInLogo'
 
 interface CreatorSocialsProps {
     githubUrl?: string
@@ -14,22 +15,16 @@ const CreatorSocials: React.FC<CreatorSocialsProps> = ({
     return (
       <div className={styles.container}>
         {!!githubUrl && (
-          <CustomIcon
-                  fileName='logo-github'
-                  height={22}
-                  width={22}
-                  className='github-logo'
-                  onClick={() => window.open(githubUrl!, `_blank`)}
-                />
+          <GitHubLogo
+            githubUrl={githubUrl}
+            size={22}
+          />
               )}
         {!!linkedInUrl && (
-          <CustomIcon
-                  fileName='logo-linkedin'
-                  height={22}
-                  width={22}
-                  className='linkedin-logo'
-                  onClick={() => window.open(linkedInUrl!, `_blank`)}
-                />
+          <LinkedInLogo
+            linkedInUrl={linkedInUrl}
+            size={22}
+          />
               )}
       </div>
     )

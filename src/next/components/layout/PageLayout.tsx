@@ -5,6 +5,7 @@ import Sidebar from './sidebar/Sidebar'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Script from 'next/script'
 import HeroImage from './hero-image/HeroImage'
+import styles from './PageLayout.module.scss'
 
 interface PageLayoutProps {
     pageTitle?: string
@@ -42,7 +43,7 @@ export const PageLayout = ({
             imgSrc={imgSrc}
           />
         )}
-        <main>
+        <main className={styles.content}>
           {children}
         </main>
       </>

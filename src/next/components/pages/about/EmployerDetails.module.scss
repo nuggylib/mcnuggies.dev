@@ -2,10 +2,10 @@
 
 .employerContainer {
     .employerTitle {
+        border: none;
         display: inline-flex;
         align-items: center;
         width: 100%;
-        border-radius: 4px;
         .employerLogo {
             display: flex;
             margin: 0 1rem 0 0;
