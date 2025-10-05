@@ -46,9 +46,6 @@ const Home: NextPage = () => {
           marginBottom: `2rem`
         }}
       >
-        <h1>
-          mcnuggies.dev
-        </h1>
       </div>
       {Object.keys(rootPageConfigs).map(idx => {
         const i = parseInt(idx)

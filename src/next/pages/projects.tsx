@@ -17,10 +17,6 @@ const Projects: React.FC<ProjectsProps> = ({
             metaDescription={`Projects from the creator and maintainer of ${process.env.HOST}`}
             pageTitle='Projects'
         >
-        <div className='projects-page-heading'>
-          <h1>Projects</h1>
-          <span>A curated list of projects I&apos;ve created</span>
-        </div>
         <ul className='projects-list'>
           {projects.map((project, idx) => <ProjectComponent key={`project-${idx}`} title={project.title!} repoUrl={project.repoUrl!} slug={project.slug!.current} description={<PortableText value={project.description!}/>}/>)}
         </ul>

@@ -20,6 +20,7 @@
     "tsc:next": "yarn workspace @mcnuggies-blog/next tsc",
     "tsc:studio": "yarn workspace @mcnuggies-blog/studio tsc",
     "generateSchemaTypes": "yarn workspace @mcnuggies-blog/studio generateSchemaTypes",
+    "generateSearchIndex": "yarn workspace @mcnuggies-blog/next tsx scripts/generateSearchIndex.ts",
     "prepare": "husky",
     "storybook": "yarn workspace @mcnuggies-blog/next storybook"
   },
