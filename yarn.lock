@@ -12893,6 +12893,7 @@ __metadata:
     "@types/node": "npm:^17.0.21"
     "@typescript-eslint/eslint-plugin": "npm:^8.3.0"
     "@typescript-eslint/parser": "npm:^8.3.0"
+    dotenv: "npm:^17.2.3"
     eslint: "npm:^9.15.0"
     eslint-plugin-storybook: "npm:^9.1.8"
     globals: "npm:^15.8.0"
