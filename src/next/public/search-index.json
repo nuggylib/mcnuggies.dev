@@ -1,0 +1,174 @@
+{
+  "articles": [
+    {
+      "id": "82d9ef91-301f-441c-ad44-d52dd5a504f8",
+      "type": "article",
+      "title": "Creating the the base shell object",
+      "description": "Part 2 of my series on creating a Pokéball in FreeCAD, covering how to create the base shell object.",
+      "slug": "creating-the-the-base-shell-object",
+      "categories": [
+        "FreeCAD",
+        "3D Modeling",
+        "3D Printing"
+      ],
+      "publishDate": "2024-01-18"
+    },
+    {
+      "id": "02739f2f-54d6-4b87-82ba-6e735e2336ca",
+      "type": "article",
+      "title": "Making a Pokéball in FreeCAD: Series Introduction",
+      "description": "The first part on my series covering how to make a Pokéball in FreeCAD.",
+      "slug": "making-a-pokéball-in-freecad:-series-introduction",
+      "categories": [
+        "3D Modeling",
+        "FreeCAD",
+        "3D Printing"
+      ],
+      "publishDate": "2024-01-03"
+    },
+    {
+      "id": "608a72ed-aff1-4f1d-84cd-7a820e2807cb",
+      "type": "article",
+      "title": "Sanity + Next.js: Displaying embedded images in Portable Text",
+      "description": "A guide on how to display images hosted on Sanity CMS through Portable Text components.",
+      "slug": "sanity-+-next.js:-displaying-embedded-images-in-portable-text",
+      "categories": [
+        "Sanity",
+        "Portable Text",
+        "React",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "publishDate": "2023-12-17"
+    },
+    {
+      "id": "16d6373e-e22a-4571-aa29-2ba0984f460b",
+      "type": "article",
+      "title": "How to run Nextcloud on Unraid",
+      "description": "A guide on getting a simple, self-hosted Nextcloud instance on Unraid.",
+      "slug": "how-to-run-nextcloud-on-unraid",
+      "categories": [
+        "Unraid",
+        "Nextcloud"
+      ],
+      "publishDate": "2023-12-03"
+    },
+    {
+      "id": "739f4de4-2bb5-410d-a32e-800301a13fab",
+      "type": "article",
+      "title": "The Ultimate Minecraft Forge Modpack Guide",
+      "description": "A complete guide for creating and maintaining a Minecraft Forge modpack, including server hosting.",
+      "slug": "the-ultimate-minecraft-forge-modpack-guide",
+      "categories": [
+        "Forge",
+        "Gaming",
+        "Minecraft"
+      ],
+      "publishDate": "2023-11-12"
+    },
+    {
+      "id": "75b10c74-c9ae-4116-bf90-154faaab6c37",
+      "type": "article",
+      "title": "How to share a Minecraft Modpack on CurseForge without review",
+      "description": "CurseForge, while useful, puts an annoying level of restrictions in place when it comes to sharing modpacks with friends. This covers how to get around some of them.",
+      "slug": "how-to-share-a-minecraft-modpack-on-curseforge-without-review",
+      "categories": [
+        "Minecraft"
+      ],
+      "publishDate": "2022-04-16"
+    },
+    {
+      "id": "3b8b81df-3dfb-4155-83b4-a7a41ecf4247",
+      "type": "article",
+      "title": "Halo Infinite's not-so-infinite customization system",
+      "description": "A look at Halo Infinite's customization system as it currently stands, and what 343 Industries could do to improve it.",
+      "slug": "halo-infinite's-not-so-infinite-customization system",
+      "categories": [
+        "Gaming"
+      ],
+      "publishDate": "2022-01-25"
+    },
+    {
+      "id": "64951b03-f826-4855-986e-37068543adb7",
+      "type": "article",
+      "title": "Site Reboot",
+      "description": "Putting a fresh coat of paint on things around here!",
+      "slug": "site-reboot",
+      "categories": [
+        "General"
+      ],
+      "publishDate": "2022-01-02"
+    },
+    {
+      "id": "0b409b5d-017f-4755-b79f-dc8b3e2f390e",
+      "type": "article",
+      "title": "MinecraftForge environment setup",
+      "description": "A look into the basics of setting up your environment in preparation for building a Minecraft mod for use in ForgeModLoader.",
+      "slug": "minecraftforge-environment-setup",
+      "categories": [
+        "Minecraft",
+        "Forge"
+      ],
+      "publishDate": "2021-08-06"
+    },
+    {
+      "id": "42d9d9ee-f485-4211-a439-88cfb399c1e3",
+      "type": "article",
+      "title": "Hosting a Forge Minecraft Server on your home Unraid system",
+      "description": "How to host a Minecraft server from home using UNRAID and Docker.",
+      "slug": "hosting-a-forge-minecraft-server-on-your-home-unraid-system",
+      "categories": [
+        "Unraid",
+        "Docker",
+        "Minecraft"
+      ],
+      "publishDate": "2021-08-01"
+    }
+  ],
+  "projects": [
+    {
+      "id": "fcad57e2-ab20-41f6-a361-64117bdc0a2d",
+      "type": "project",
+      "title": "GitHub Search Demo Webapp",
+      "description": "A simple demo application showing unauthenticated usage for GitHub's search API. The deployed version is still live, but not always functional as it's limited by the free tier it's hosted on.",
+      "slug": "github-search-demo-webapp"
+    },
+    {
+      "id": "ffc233dd-214d-49d9-8557-279d374fd8e5",
+      "type": "project",
+      "title": "Golang REST App Demo",
+      "description": "A simple REST application using Golang that I created as a practice exercise.",
+      "slug": "golang-rest-app-demo"
+    },
+    {
+      "id": "83a0fc8b-92bb-44a6-a288-6fae5ae4ba93",
+      "type": "project",
+      "title": "Naughty Monkeys",
+      "description": "A silly Minecraft mod that adds semi-hostile, but useful monkeys to the game. Additionally, it adds some new items and mechanics that build on base game content. This project required legally-protected de-obfuscation of the code base in order to be developed (as all Minecraft mods require).",
+      "slug": "naughty-monkeys"
+    },
+    {
+      "id": "fbe08080-e9b3-410a-a6b9-9c3146e661ee",
+      "type": "project",
+      "title": "Zenko Cloudserver Demo",
+      "description": "A simple demo project covering how to set and run a Zenko Cloudserver locally using docker-compose. This project was used for an internal company demo while employed at Cypress and was intended to be used as a test environment replacement for S3 so we no longer needed to store test images in a live S3 bucket for local testing.",
+      "slug": "zenko-cloudserver-demo"
+    },
+    {
+      "id": "72027da6-d296-4b5a-bcec-d57681f8265c",
+      "type": "project",
+      "title": "mcnuggies blog",
+      "description": "A combination NextJS static site & Sanity studio monorepo that serves as both my personal blog and online portfolio. Sanity is a content management system (CMS) that offers a highly-versatile schema customization system, as well as the ability to configure your own Sanity Studio to your needs.",
+      "slug": "mcnuggies-blog"
+    }
+  ],
+  "creators": [
+    {
+      "id": "559f83ed-65e5-4f55-ac1d-96374f22d6c2",
+      "type": "creator",
+      "title": "Armando Vasquez",
+      "description": "Senior Software Engineer",
+      "slug": "armando-vasquez"
+    }
+  ]
+}

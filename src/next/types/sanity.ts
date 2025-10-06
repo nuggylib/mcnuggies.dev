@@ -75,6 +75,13 @@ export interface Creator extends SanityDocument {
   slug?: { _type: `slug`; current: string };
 
   /**
+   * Email — `string`
+   *
+   *
+   */
+  email?: string;
+
+  /**
    * Image — `image`
    *
    *
@@ -99,6 +106,13 @@ export interface Creator extends SanityDocument {
    *
    */
   githubUrl?: string;
+
+  /**
+   * LinkedIn Username — `string`
+   *
+   *
+   */
+  linkedInUsername?: string;
 
   /**
    * LinkedIn — `url`
@@ -143,6 +157,13 @@ export interface Creator extends SanityDocument {
         hotspot?: SanityImageHotspot;
       }>
   >;
+
+  /**
+   * Current Employer — `reference`
+   *
+   *
+   */
+  currentEmployer?: SanityReference<Employer>;
 }
 
 /**

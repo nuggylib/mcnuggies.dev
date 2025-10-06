@@ -2,10 +2,10 @@
 
 .employerContainer {
     .employerTitle {
+        border: none;
         display: inline-flex;
         align-items: center;
         width: 100%;
-        border-radius: 4px;
         .employerLogo {
             display: flex;
             margin: 0 1rem 0 0;
@@ -24,7 +24,7 @@
                 }
             }
             .employerDates {
-                color: vars.$indigo-400;
+                color: vars.$brand-secondary;
                 font-style: italic;
                 @media (min-width: vars.$mobileS) {
                     padding: 0;
@@ -60,7 +60,6 @@
                 font-weight: 600;
             }
             .jobTitleDates {
-                color: vars.$indigo-400;
                 font-style: italic;
             }
         }
@@ -76,19 +75,10 @@
             li {
                 transition: 0.2s ease;
                 &:hover {
-                    color: vars.$indigo-600;
+                    color: vars.$brand-secondary;
                     transition: 0.2s ease;
                 }
             }
         }
-    }
-}
-
-.linkedEmployer {
-    cursor: pointer;
-    transition: 0.2s ease;
-    &:hover {
-        transition: 0.2s ease;
-        background-color: vars.$indigo-200;
     }
 }

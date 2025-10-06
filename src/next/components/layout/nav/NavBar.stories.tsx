@@ -25,7 +25,7 @@ const meta: Meta<typeof SiteNavigation> = {
     layout: "fullscreen",
     docs: {
       description: {
-        component: "The main navigation bar component that displays the menu toggle button and site logo. Uses Redux for sidebar state management.",
+        component: "The main navigation bar component that displays the menu toggle button, site logo, and global search. Uses Redux for sidebar state management. Search index is loaded dynamically from a static JSON file.",
       },
     },
   },
@@ -39,34 +39,7 @@ export const Default: Story = {
   parameters: {
     docs: {
       description: {
-        story: "The default navigation bar with menu button and logo.",
-      },
-    },
-  },
-}
-
-export const Interactive: Story = {
-  play: async () => {
-    // This story demonstrates the interactive behavior
-    // The menu button should toggle the sidebar when clicked
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: "Interactive version showing the navigation bar with clickable menu button.",
-      },
-    },
-  },
-}
-
-export const DarkNavbar: Story = {
-  parameters: {
-    backgrounds: {
-      default: "dark",
-    },
-    docs: {
-      description: {
-        story: "Navigation bar displayed on a dark background to show the dark variant styling.",
+        story: "The default navigation bar with menu button, logo, and search.",
       },
     },
   },

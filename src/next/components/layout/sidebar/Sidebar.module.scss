@@ -4,46 +4,74 @@
 .sidebarContainer {
     z-index: 1000;
     position: fixed;
-    background-color: vars.$gray-600;
+    border-right: 1px solid vars.$gray-300;
+    height: 100%;
+    overflow: visible;
+    transition: 0.3s ease;
+    background-color: vars.$gray-A1;
+
+    @media screen and (max-width: vars.$laptop) {
+        width: 60%;
+
+        &.closed {
+            transform: translateX(-100%);
+            width: 60%;
+        }
+    }
+
+    @media screen and (min-width: vars.$laptop) {
+        width: 15%;
+
+        &.closed {
+            width: 64px;
+        }
+    }
+}
+
+.menuContent {
     height: 100%;
     overflow: hidden;
-    transition: 0.5s ease;
+
     a {
         text-decoration: none;
     }
+
     >:first-child {
         margin-top: 1rem;
     }
-    @media  screen and (max-width: vars.$laptop) {
-        width: 60%;
-    }
-    @media screen and (min-width: vars.$laptop) {
-        width: 25%;
-    }
 
-    :global(.sidebar-option-row) {
-        padding-left: 1rem;
-        line-height: 40px;
-        font-size: 20px;
-        font-weight: 400;
-        span {
-            color: vars.$gray-100;
-        }
-        background-color: inherit;
-        transition: 0.3s ease;
-        &:hover {
-            cursor: pointer;
-            background-color: vars.$gray-800;
-            transition: 0.3s ease;
-        }
-    }
-
-    :global(.sidebar-option-row):not(:last-child) {
+    >:not(:last-child) {
         margin-bottom: 1rem;
     }
+}
 
-    &.closed {
-        transform: translateX(-100%);
+.toggleButton {
+    position: absolute;
+    top: 4rem;
+    right: -1px;
+    transform: translate(50%, -50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50% !important;
+    background-color: vars.$gray-A1;
+    border: 1px solid vars.$gray-300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+
+    @media screen and (max-width: vars.$laptop) {
+        display: none;
     }
 
+    &:hover {
+        background-color: vars.$gray-300;
+        transform: translate(50%, -50%) scale(1.1);
+    }
+
+    svg {
+        color: vars.$gray-700;
+    }
 }

@@ -22,6 +22,12 @@ export default {
       },
     },
     {
+      name: `email`,
+      validation: (Rule) => Rule.required(),
+      title: `Email`,
+      type: `string`,
+    },
+    {
       name: `image`,
       title: `Image`,
       type: `image`,
@@ -38,6 +44,11 @@ export default {
       title: `Github`,
       name: `githubUrl`,
       type: `url`,
+    },
+    {
+      title: `LinkedIn Username`,
+      name: `linkedInUsername`,
+      type: `string`,
     },
     {
       title: `LinkedIn`,
@@ -67,6 +78,19 @@ export default {
       title: `Bio`,
       validation: (Rule) => Rule.required(),
       ...richTextFieldConfig,
+    },
+    {
+      name: `currentEmployer`,
+      title: `Current Employer`,
+      type: `reference`,
+      to: [{ type: `employer` }],
+    },
+    {
+      name: `employers`,
+      title: `Employers`,
+      type: `array`,
+      of: [{ type: `reference`, to: [{ type: `employer` }] }],
+      description: `All employers (past and current) for this creator`,
     },
   ],
   preview: {

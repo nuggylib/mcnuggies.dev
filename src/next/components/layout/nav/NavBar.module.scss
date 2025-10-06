@@ -2,24 +2,56 @@
 @use 'mixins' as mixins;
 
 .navBar {
-    background-color: vars.$gray-800;
-    padding-left: 1rem;
+    width: 100%;
+    border-bottom: 1px solid vars.$gray-300;
+    padding: 0.5rem 1rem;
     color: vars.$gray-100;
+    background-color: vars.$gray-A1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.menuIcon {
-    left: 0;
-    margin-right: auto;
-    svg {
+.appIcon {
+    flex: 1;
+    img {
         @include mixins.nav-icon-hover-transition();
     }
 }
 
-.appIcon {
-    right: 0;
-    margin-left: auto;
+.searchWrapper {
+    flex: 1;
     display: flex;
-    img {
-        @include mixins.nav-icon-hover-transition();
+    justify-content: center;
+    max-width: 280px;
+
+    @media (max-width: 1023px) {
+        max-width: none;
+        flex: 2;
+    }
+}
+
+.spacer {
+    flex: 1;
+}
+
+.mobileMenuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: vars.$gray-700;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: vars.$brand-primary;
+        transform: scale(1.1);
+    }
+
+    svg {
+        color: inherit;
     }
 }

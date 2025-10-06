@@ -31,7 +31,6 @@ blockquote {
 }
 
 main {
-    margin-top: 1rem;
     font-size: 18px;
     color: vars.$gray-600;
     @media screen and (max-width: vars.$laptop) {
@@ -68,4 +67,28 @@ ol {
 
 ul {
     @include mixins.unorderedListNesting();
+}
+
+a {
+    color: vars.$gray-600 !important;
+    transition: 0.1s ease;
+    &:hover {
+        cursor: pointer;
+        transition: 0.1s ease;
+        color: vars.$brand-primary !important;
+    }
+}
+
+button {
+    padding: 0.1rem 0.5rem;
+    background-color: vars.$gray-A1;
+    border-radius: 4px !important;
+    border: 1px solid vars.$gray-300;
+    transition: 0.1s ease;
+    &:hover {
+        background-color: vars.$brand-primary;
+        color: vars.$gray-A1;
+        transition: 0.1s ease;
+        border: 1px solid transparent;
+    }
 }

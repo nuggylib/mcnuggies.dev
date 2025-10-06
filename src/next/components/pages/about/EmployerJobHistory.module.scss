@@ -8,7 +8,7 @@
             font-weight: 600;
         }
         .jobTitleDates {
-            color: vars.$indigo-400;
+            color: vars.$brand-secondary;
             font-style: italic;
         }
     }
@@ -24,7 +24,7 @@
         li {
             transition: 0.2s ease;
             &:hover {
-                color: vars.$indigo-600;
+                color: vars.$brand-secondary;
                 transition: 0.2s ease;
             }
         }

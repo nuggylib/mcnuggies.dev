@@ -5,6 +5,10 @@ import Sidebar from './sidebar/Sidebar'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Script from 'next/script'
 import HeroImage from './hero-image/HeroImage'
+import { SearchModal } from '../modal/SearchModal'
+import { useSearchIndex } from '../../hooks/useSearchIndex'
+import { SearchIndexItem } from '../../types/search'
+import styles from './PageLayout.module.scss'
 
 interface PageLayoutProps {
     pageTitle?: string
@@ -21,6 +25,13 @@ export const PageLayout = ({
     children,
     imgSrc
 }: PageLayoutProps) => {
+    const searchIndex = useSearchIndex()
+
+    // Flatten the search index for the SearchModal component
+    const flattenedIndex: SearchIndexItem[] = searchIndex
+      ? [...searchIndex.articles, ...searchIndex.projects, ...searchIndex.creators]
+      : []
+
     return (
       <>
         <Head>
@@ -29,6 +40,7 @@ export const PageLayout = ({
           <link rel="icon" href="/mcnuggies.ico" />
         </Head>
         <Script defer data-domain="mcnuggies.dev" src="https://plausible.io/js/script.js" />
+        {/* TODO: Remove this since it's Vercel stuff - we're gutting all Vercel-specific logic */}
         <SpeedInsights />
         <SiteNavigation />
         <Sidebar
@@ -41,8 +53,9 @@ export const PageLayout = ({
             imgSrc={imgSrc}
           />
         )}
-        <main>
+        <main className={styles.content}>
           {children}
+          <SearchModal searchIndex={flattenedIndex} />
         </main>
       </>
     )

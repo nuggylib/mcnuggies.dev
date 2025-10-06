@@ -5,7 +5,6 @@ import { MONTHS } from '../../../util/constants'
 import kebabCase from '../../../util/kebabCase'
 import styles from './EmployerDetails.module.scss'
 import { EmployerJobHistory } from './EmployerJobHistory'
-import cs from 'clsx'
 
 export type EmployerProps = {
   name: string
@@ -34,7 +33,8 @@ export const EmployerDetails: FunctionComponent<EmployerProps> = ({
 
     return (
       <div className={styles.employerContainer}>
-        <div className={cs(styles.employerTitle, homePage && styles.linkedEmployer)}
+        <button className={styles.employerTitle}
+          disabled={!homePage}
           onClick={() => homePage ? window.open(homePage, `_blank`) : undefined}
         >
           <div className={styles.employerLogo}>
@@ -51,7 +51,7 @@ export const EmployerDetails: FunctionComponent<EmployerProps> = ({
             <span className={styles.employerName}>{name!}</span>
             <span className={styles.employerDates}>{getFormattedDateString(startDate!)} - {(endDate && getFormattedDateString(endDate)) || `Present`}</span>
           </div>
-        </div>
+        </button>
         <EmployerJobHistory
           employerName={name}
           jobs={jobs}

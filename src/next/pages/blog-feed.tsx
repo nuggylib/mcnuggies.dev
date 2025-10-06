@@ -116,14 +116,6 @@ const BlogFeed: NextPage<NextPageProps> = ({ allArticles }) => {
             pageTitle="Blog"
             metaDescription={`Searchable & filterable blog feed for ${process.env.HOST}`}
         >
-        <div style={{
-          display: `flex`,
-          justifyContent: `center`,
-          marginTop: `2rem`,
-          marginBottom: `2rem`
-        }}>
-          <h1>mcnuggies.dev - blog</h1>
-        </div>
         <BlogFeedControls
           searchText={searchText}
           searchTextHandler={(e) => setSearchText(e.target.value)}

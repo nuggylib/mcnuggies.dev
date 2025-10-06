@@ -1,0 +1,51 @@
+@use 'variables' as vars;
+
+.container {
+    padding-left: 1rem;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: inherit;
+    transition: 0.3s ease;
+    &:hover {
+        cursor: pointer;
+        background-color: vars.$brand-primary;
+        transition: 0.3s ease;
+        span {
+            color: vars.$gray-A1;
+        }
+        .icon {
+            color: vars.$gray-A1;
+        }
+    }
+}
+
+.rowContent {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon {
+    transition: 0.3s ease;
+    color: vars.$gray-600;
+}
+
+.iconContainer {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+}
+
+.link {
+    span {
+        color: vars.$gray-600;
+        transition: 0.3s ease;
+    }
+}
+
+.closed {
+    display: none;
+}

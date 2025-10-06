@@ -1,0 +1,50 @@
+.creatorDetails {
+    display: inline-flex;
+}
+
+.emailWrapper {
+    display: inline-flex;
+}
+
+.creatorMetadata {
+    display: flex;
+    flex-direction: column;
+}
+
+.metadataFields {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.socialLink {
+    span, a {
+        margin-left: 0.5rem;
+    }
+}
+
+.bio {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.githubActivity {
+    margin-bottom: 2rem;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    // Ensure calendar fits on screen without horizontal scroll
+    :global(.react-activity-calendar) {
+        max-width: 100%;
+        overflow-x: auto;
+
+        // Make it more compact like GitHub's
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}

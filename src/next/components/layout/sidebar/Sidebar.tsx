@@ -13,24 +13,28 @@ const SIDEBAR_OPTIONS = [
     {
         option: {
             label: `Home`,
+            iconFileName: `bootstrap-house-door`,
             to: `/`
         }
     },
     {
         option: {
             label: `Blog`,
+            iconFileName: `bootstrap-book`,
             to: `/blog-feed`
         }
     },
     {
         option: {
             label: `Projects`,
+            iconFileName: `bootstrap-hammer`,
             to: `/projects`
         }
     },
     {
         option: {
             label: `About`,
+            iconFileName: `bootstrap-info-circle`,
             to: `/about`
         }
     }
@@ -40,8 +44,6 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
 
     const dispatch = useDispatch()
     const isSidebarOpen = useSelector((state: any) => state.nav.showSidebar)
-
-
 
     useEffect(() => {
         /**
@@ -69,17 +71,57 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
 
 
 
+    const handleSidebarClick = (e: React.MouseEvent) => {
+        // Only expand when clicking empty space and sidebar is closed
+        // Check if click target is not a link, sidebar option, or toggle button
+        const target = e.target as HTMLElement
+        const isLinkOrOption = target.closest(`a`) || target.closest(`#sidebar-option`)
+        const isToggleButton = target.closest(`#sidebar-toggle-button`)
+
+        if (!isSidebarOpen && !isLinkOrOption && !isToggleButton) {
+            dispatch(toggleShowSidebar())
+        }
+    }
+
     return (
-      <div id='sidebar' className={`${styles.sidebarContainer} ${isSidebarOpen ? undefined : styles.closed}`}>
-        {SIDEBAR_OPTIONS.map(option => {
-                const key = kebabCase(option.option.label)
-                return (
-                  <SidebarOption
-                        key={`option-${key}`}
-                        option={option.option}
-                    />
-                )
-            })}
+      <div
+        id='sidebar'
+        className={`${styles.sidebarContainer} ${isSidebarOpen ? undefined : styles.closed}`}
+        onClick={handleSidebarClick}
+      >
+        <div className={styles.menuContent}>
+          {SIDEBAR_OPTIONS.map(option => {
+                  const key = kebabCase(option.option.label)
+                  return (
+                    <SidebarOption
+                          key={`option-${key}`}
+                          option={option.option}
+                      />
+                  )
+              })}
+        </div>
+        <button
+          id="sidebar-toggle-button"
+          className={styles.toggleButton}
+          onClick={() => dispatch(toggleShowSidebar())}
+          aria-label={isSidebarOpen ? `Close sidebar` : `Open sidebar`}
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
       </div>
     )
 }

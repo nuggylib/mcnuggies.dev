@@ -1,0 +1,66 @@
+@use 'variables' as vars;
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.imageContainer {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    img {
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+.creatorDetails {
+    .name {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 0;
+        text-decoration: none;
+        transition: 0.2s ease;
+        color: vars.$brand-secondary !important;
+        &:hover {
+            transition: 0.2s ease;
+            color: vars.$brand-primary !important;
+        }
+    }
+}
+
+.currentJob {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .jobTitle {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+        margin-bottom: 0.25rem;
+    }
+    .employer {
+        display: inline-flex;
+        align-items: center;
+        span {
+            margin-bottom: 0.25rem;
+        }
+        .at {
+            margin-right: 0.25rem;
+        }
+        .companyName {
+            margin-left: 0.25rem;
+        }
+    }
+}
+
+.creatorSocials {
+    span {
+        margin-bottom: 0.75rem;
+    }
+}

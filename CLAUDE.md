@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Architecture Overview
 
 This is a personal blog site with two main applications:
+
 - **Next.js Frontend** (`src/next/`) - Main website built with React, TypeScript, Next.js, Bootstrap, and Redux
 - **Sanity Studio** (`src/studio/`) - Content management system for blog posts, creator info, and projects
 
@@ -15,11 +16,13 @@ The frontend consumes data from Sanity CMS via their client library. Content inc
 ### Running the Applications
 
 **Start the Next.js frontend:**
+
 ```bash
 yarn web
 ```
 
 **Start the Sanity Studio:**
+
 ```bash
 yarn studio
 ```
@@ -27,11 +30,13 @@ yarn studio
 ### Build Commands
 
 **Next.js:**
+
 ```bash
 yarn build:next
 ```
 
 **Sanity Studio:**
+
 ```bash
 yarn build:studio
 ```
@@ -39,11 +44,13 @@ yarn build:studio
 ### Linting and Type Checking
 
 **Lint Next.js code:**
+
 ```bash
 yarn lint-next
 ```
 
 **Type checking:**
+
 ```bash
 yarn tsc:next   # Next.js
 yarn tsc:studio # Sanity Studio
@@ -52,6 +59,7 @@ yarn tsc:studio # Sanity Studio
 ### Testing
 
 **Generate Sanity schema types:**
+
 ```bash
 yarn generateSchemaTypes
 ```
@@ -59,11 +67,13 @@ yarn generateSchemaTypes
 ### Setup Commands
 
 **Initial setup:**
+
 ```bash
 yarn install  # Installs all workspace dependencies
 ```
 
 **Clean install:**
+
 ```bash
 yarn clean     # Removes all node_modules
 yarn install   # Reinstalls everything

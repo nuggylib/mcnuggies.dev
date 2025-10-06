@@ -1,4 +1,5 @@
 import "../styles/main.scss"
+import "bootstrap/dist/css/bootstrap.min.css"
 import Link from "next/link"
 
 // Override Next.js Link component for Storybook
@@ -22,7 +23,7 @@ const preview = {
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
       test: "todo"
-    }
+    },
   },
 }
 
