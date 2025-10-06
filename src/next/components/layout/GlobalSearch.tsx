@@ -3,7 +3,7 @@ import { FormControl } from "react-bootstrap"
 import styles from './GlobalSearch.module.scss'
 import { useDispatch, useSelector } from "react-redux"
 import CustomIcon from "../shared/CustomIcon"
-import { openSearchModal, setSearchQuery } from "../../redux/searchSlice"
+import { openSearchModal, closeSearchModal, setSearchQuery } from "../../redux/searchSlice"
 
 /**
  * The Global Search bar.
@@ -16,15 +16,23 @@ const GlobalSearch = () => {
     const searchText = useSelector((state: any) => state.search.query)
 
     const handleInputClick = () => {
-      dispatch(openSearchModal())
+      if (searchText.length > 0) {
+        dispatch(openSearchModal())
+      }
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       dispatch(setSearchQuery(e.target.value))
+      if (e.target.value.length > 0) {
+        dispatch(openSearchModal())
+      } else {
+        dispatch(closeSearchModal())
+      }
     }
 
     const handleClear = () => {
       dispatch(setSearchQuery(``))
+      dispatch(closeSearchModal())
     }
 
     return (

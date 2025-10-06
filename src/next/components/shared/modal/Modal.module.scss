@@ -12,10 +12,6 @@
     right: 0;
     bottom: 0;
     z-index: 999; // Below navbar and sidebar, above main content
-
-    @media screen and (min-width: vars.$laptop) {
-        left: 15%; // Expanded sidebar width on desktop
-    }
 }
 
 .header {
@@ -53,7 +49,7 @@
     background-color: vars.$gray-100;
     margin: 5rem auto;
     max-height: 80%;
-    overflow-y: scroll;
+    overflow-y: auto;
     h3 {
         font-size: 20px;
     }
