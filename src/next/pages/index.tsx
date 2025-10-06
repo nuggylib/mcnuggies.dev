@@ -8,19 +8,19 @@ const rootPageConfigs = {
     title: `Blog`,
     href: `/blog-feed`,
     iconFileName: `bootstrap-book`,
-    description: `My occasional guides, reviews and general musings`
+    description: `The official mcnuggies blog`
   },
   1: {
     title: `Projects`,
     href: `/projects`,
     iconFileName: `bootstrap-hammer`,
-    description: `Take a peek at some of the projects I've worked on`
+    description: `Take a peek at some of the projects we've worked on`
   },
   2: {
     title: `About`,
     href: `/about`,
     iconFileName: `bootstrap-info-circle`,
-    description: `Find out more about mcnuggies.dev and its creator`
+    description: `Find out more about mcnuggies.dev and its creators`
   }
 } as {
   [idx: number]: {
