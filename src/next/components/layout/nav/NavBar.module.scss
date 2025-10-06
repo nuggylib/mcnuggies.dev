@@ -24,6 +24,11 @@
     display: flex;
     justify-content: center;
     max-width: 280px;
+
+    @media (max-width: 1023px) {
+        max-width: none;
+        flex: 2;
+    }
 }
 
 .spacer {
