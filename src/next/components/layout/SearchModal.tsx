@@ -1,27 +1,27 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Fuse from 'fuse.js'
 import { Modal } from '../shared/modal/Modal'
 import { SearchIndexItem } from '../../types/search'
+import { closeSearchModal } from '../../redux/searchSlice'
 import styles from './SearchModal.module.scss'
 import Link from 'next/link'
 
 interface SearchModalProps {
-  isOpen: boolean
-  onClose: () => void
   searchIndex: SearchIndexItem[]
-  initialQuery?: string
 }
 
 /**
  * SearchModal component for displaying search results across the site
  */
-export const SearchModal: React.FC<SearchModalProps> = ({
-  isOpen,
-  onClose,
-  searchIndex,
-  initialQuery = ``
-}) => {
-  const [query, setQuery] = useState(initialQuery)
+export const SearchModal: React.FC<SearchModalProps> = ({ searchIndex }) => {
+  const dispatch = useDispatch()
+  const isOpen = useSelector((state: any) => state.search.isModalOpen)
+  const query = useSelector((state: any) => state.search.query)
+
+  const handleClose = () => {
+    dispatch(closeSearchModal())
+  }
 
   // Configure Fuse.js for fuzzy searching
   const fuse = useMemo(() => {
@@ -81,17 +81,8 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   }
 
   return (
-    <Modal title="Search" isOpen={isOpen} onClose={onClose}>
+    <Modal title="Search" isOpen={isOpen} onClose={handleClose}>
       <div className={styles.searchContainer}>
-        <input
-          type="text"
-          className={styles.searchInput}
-          placeholder="Search articles, projects, creators..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          autoFocus
-        />
-
         {query.length > 0 && query.length < 2 && (
           <p className={styles.hint}>Type at least 2 characters to search</p>
         )}
@@ -111,7 +102,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                   <ul className={styles.resultsList}>
                     {items.map(item => (
                       <li key={item.id} className={styles.resultItem}>
-                        <Link href={getResultLink(item)} onClick={onClose}>
+                        <Link href={getResultLink(item)} onClick={handleClose}>
                           <div className={styles.resultTitle}>{item.title}</div>
                           <div className={styles.resultDescription}>
                             {item.description.substring(0, 150)}

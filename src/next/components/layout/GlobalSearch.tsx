@@ -1,13 +1,9 @@
+import React from 'react'
 import { FormControl } from "react-bootstrap"
 import styles from './GlobalSearch.module.scss'
-import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import CustomIcon from "../shared/CustomIcon"
-import { SearchModal } from "./SearchModal"
-import { SearchIndexItem } from "../../types/search"
-
-interface GlobalSearchProps {
-  searchIndex: SearchIndexItem[]
-}
+import { openSearchModal, setSearchQuery } from "../../redux/searchSlice"
 
 /**
  * The Global Search bar.
@@ -15,50 +11,44 @@ interface GlobalSearchProps {
  * This is intended to only be used on the NavBar and is intended to be a "one-stop-shop" search
  * utility for the user to search for all things across the site.
  */
-const GlobalSearch = ({ searchIndex }: GlobalSearchProps) => {
-    const [searchText, setSearchText] = useState(``)
-    const [modalIsOpen, setModalIsOpen] = useState(false)
+const GlobalSearch = () => {
+    const dispatch = useDispatch()
+    const searchText = useSelector((state: any) => state.search.query)
 
     const handleInputClick = () => {
-      setModalIsOpen(true)
+      dispatch(openSearchModal())
     }
 
-    const handleModalClose = () => {
-      setModalIsOpen(false)
-      setSearchText(``)
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      dispatch(setSearchQuery(e.target.value))
+    }
+
+    const handleClear = () => {
+      dispatch(setSearchQuery(``))
     }
 
     return (
-      <>
-        <div className={styles.searchWrapper}>
-          <FormControl
-                  className={styles.container}
-                  placeholder="Search"
-                  value={searchText}
-                  onChange={(e) => setSearchText(e.target.value)}
-                  onClick={handleInputClick}
-                  readOnly
+      <div className={styles.searchWrapper}>
+        <FormControl
+                className={styles.container}
+                placeholder="Search"
+                value={searchText}
+                onChange={handleChange}
+                onClick={handleInputClick}
+            />
+        {searchText && (
+          <button
+            className={styles.xButton}
+            onClick={handleClear}
+          >
+            <CustomIcon
+                  fileName='bootstrap-x-large'
+                    height={12}
+                    width={12}
               />
-          {searchText && (
-            <button
-              className={styles.xButton}
-              onClick={() => setSearchText(``)}
-            >
-              <CustomIcon
-                    fileName='bootstrap-x-large'
-                      height={12}
-                      width={12}
-                />
-            </button>
-          )}
-        </div>
-        <SearchModal
-          isOpen={modalIsOpen}
-          onClose={handleModalClose}
-          searchIndex={searchIndex}
-          initialQuery={searchText}
-        />
-      </>
+          </button>
+        )}
+      </div>
     )
 }
 

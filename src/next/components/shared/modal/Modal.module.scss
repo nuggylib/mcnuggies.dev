@@ -7,10 +7,15 @@
 .background {
     background-color: rgba(0,0,0,0.4);
     position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+    top: 56px; // Approximate navbar height
+    left: 64px; // Collapsed sidebar width
+    right: 0;
+    bottom: 0;
+    z-index: 999; // Below navbar and sidebar, above main content
+
+    @media screen and (min-width: vars.$laptop) {
+        left: 15%; // Expanded sidebar width on desktop
+    }
 }
 
 .header {
