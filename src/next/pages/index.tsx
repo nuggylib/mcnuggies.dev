@@ -85,12 +85,6 @@ const Home: NextPage = () => {
             description: `Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed.`
           },
           {
-            provider: `Vercel`,
-            homePage: `https://vercel.com/`,
-            iconFileName: `logo-vercel`,
-            description: `Vercel combines the best developer experience with an obsessive focus on end-user performance.`
-          },
-          {
             provider: `Sanity`,
             homePage: `https://www.sanity.io/`,
             iconFileName: `logo-sanity`,
