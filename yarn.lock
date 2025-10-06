@@ -12903,6 +12903,7 @@ __metadata:
     sanity-codegen: "npm:^0.9.8"
     storybook: "npm:^9.1.8"
     ts-node: "npm:^10.9.2"
+    tsx: "npm:^4.20.6"
     typescript: "npm:^5.6.0"
     uuid: "npm:^8.3.2"
     vitest: "npm:^3.2.4"

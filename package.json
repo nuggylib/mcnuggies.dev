@@ -45,6 +45,7 @@
     "prettier": "^2.5.1",
     "sanity-codegen": "^0.9.8",
     "storybook": "^9.1.8",
+    "tsx": "^4.20.6",
     "typescript": "^5.6.0",
     "uuid": "^8.3.2",
     "vitest": "^3.2.4"
