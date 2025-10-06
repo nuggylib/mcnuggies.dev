@@ -38,9 +38,13 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
     employers
 }) => {
     // There will only be one creator in the response since they should be queried by a unique identifier
-    const creator = creators[0]
+    const creator = creators?.[0]
 
-    return (creator &&
+    if (!creator) {
+        return null
+    }
+
+    return (
       <PageLayout
             // TODO: Use the creator's name
             pageTitle={`About ${creator.name}`}
