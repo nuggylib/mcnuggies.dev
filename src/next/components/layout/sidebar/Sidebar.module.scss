@@ -10,17 +10,22 @@
     transition: 0.3s ease;
     background-color: vars.$gray-A1;
 
-    @media  screen and (max-width: vars.$laptop) {
+    @media screen and (max-width: vars.$laptop) {
         width: 60%;
+
+        &.closed {
+            transform: translateX(-100%);
+            width: 60%;
+        }
     }
+
     @media screen and (min-width: vars.$laptop) {
         width: 15%;
-    }
 
-    &.closed {
-        width: 64px;
+        &.closed {
+            width: 64px;
+        }
     }
-
 }
 
 .menuContent {
@@ -56,6 +61,10 @@
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 1;
+
+    @media screen and (max-width: vars.$laptop) {
+        display: none;
+    }
 
     &:hover {
         background-color: vars.$gray-300;

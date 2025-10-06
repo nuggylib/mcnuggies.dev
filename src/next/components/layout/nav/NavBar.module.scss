@@ -29,3 +29,24 @@
 .spacer {
     flex: 1;
 }
+
+.mobileMenuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: vars.$gray-700;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: vars.$brand-primary;
+        transform: scale(1.1);
+    }
+
+    svg {
+        color: inherit;
+    }
+}

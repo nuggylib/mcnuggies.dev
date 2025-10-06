@@ -23,7 +23,6 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
     },
     {
       title: `Start date`,
