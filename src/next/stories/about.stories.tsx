@@ -44,69 +44,6 @@ const mockCreator = {
   githubUsername: "example-user",
 }
 
-const mockEmployers = [
-  {
-    _id: "employer-1",
-    _type: "employer" as const,
-    _createdAt: "2024-01-01T00:00:00Z",
-    _updatedAt: "2024-01-01T00:00:00Z",
-    _rev: "1",
-    name: "Current Company",
-    homePage: "https://example-company.com",
-    startDate: "2022-01-01",
-    endDate: undefined,
-    imageUrl: "https://via.placeholder.com/100x100/007acc/ffffff?text=Company1",
-    jobs: [
-      {
-        _id: "job-1",
-        _type: "jobTitle" as const,
-        _createdAt: "2024-01-01T00:00:00Z",
-        _updatedAt: "2024-01-01T00:00:00Z",
-        _rev: "1",
-        title: "Senior Software Engineer",
-        startDate: "2022-01-01",
-        endDate: undefined,
-        currentJobTitle: true,
-        responsibilities: [
-          "Lead development of React applications",
-          "Mentor junior developers and conduct code reviews",
-          "Architect scalable solutions for high-traffic systems",
-        ],
-      },
-    ],
-  },
-  {
-    _id: "employer-2",
-    _type: "employer" as const,
-    _createdAt: "2024-01-01T00:00:00Z",
-    _updatedAt: "2024-01-01T00:00:00Z",
-    _rev: "1",
-    name: "Previous Company",
-    homePage: "https://previous-company.com",
-    startDate: "2020-01-01",
-    endDate: "2021-12-31",
-    imageUrl: "https://via.placeholder.com/100x100/28a745/ffffff?text=Company2",
-    jobs: [
-      {
-        _id: "job-2",
-        _type: "jobTitle" as const,
-        _createdAt: "2024-01-01T00:00:00Z",
-        _updatedAt: "2024-01-01T00:00:00Z",
-        _rev: "1",
-        title: "Software Engineer",
-        startDate: "2020-01-01",
-        endDate: "2021-12-31",
-        currentJobTitle: false,
-        responsibilities: [
-          "Develop and maintain web applications using React and Node.js",
-          "Collaborate with designers and product managers on feature development",
-          "Write comprehensive unit and integration tests",
-        ],
-      },
-    ],
-  },
-]
-
 const meta: Meta<typeof About> = {
   title: "Pages/About",
   component: About,
@@ -122,10 +59,6 @@ const meta: Meta<typeof About> = {
   argTypes: {
     creators: {
       description: "Array of creator data from Sanity CMS",
-      control: { type: "object" },
-    },
-    employers: {
-      description: "Array of employer data with job history from Sanity CMS",
       control: { type: "object" },
     },
   },
@@ -146,7 +79,6 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     creators: [mockCreator],
-    employers: mockEmployers,
   },
   parameters: {
     docs: {
@@ -160,7 +92,6 @@ export const Default: Story = {
 export const WithoutGitHubUsername: Story = {
   args: {
     creators: [{ ...mockCreator, githubUsername: undefined }],
-    employers: mockEmployers,
   },
   parameters: {
     docs: {
@@ -174,7 +105,6 @@ export const WithoutGitHubUsername: Story = {
 export const EmptyWorkHistory: Story = {
   args: {
     creators: [mockCreator],
-    employers: [],
   },
   parameters: {
     docs: {
@@ -236,7 +166,6 @@ export const LongBio: Story = {
         ],
       },
     ],
-    employers: mockEmployers,
   },
   parameters: {
     docs: {

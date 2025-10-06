@@ -46,6 +46,7 @@ export const Default: Story = {
   args: {
     option: {
       label: "Home",
+      iconFileName: "home.svg",
       to: "/",
     },
   },
@@ -55,6 +56,7 @@ export const BlogOption: Story = {
   args: {
     option: {
       label: "Blog",
+      iconFileName: "blog.svg",
       to: "/blog",
     },
   },
@@ -64,6 +66,7 @@ export const ProjectsOption: Story = {
   args: {
     option: {
       label: "Projects",
+      iconFileName: "projects.svg",
       to: "/projects",
     },
   },
@@ -73,6 +76,7 @@ export const AboutOption: Story = {
   args: {
     option: {
       label: "About",
+      iconFileName: "about.svg",
       to: "/about",
     },
   },
@@ -82,6 +86,7 @@ export const LongLabel: Story = {
   args: {
     option: {
       label: "Very Long Navigation Option Name",
+      iconFileName: "home.svg",
       to: "/long-page",
     },
   },
@@ -92,11 +97,11 @@ export const MultipleOptions: Story = {
     () => (
       <Provider store={mockStore}>
         <div style={{ width: "250px", padding: "16px", backgroundColor: "#f8f9fa" }}>
-          <SidebarOption option={{ label: "Home", to: "/" }} />
-          <SidebarOption option={{ label: "Blog", to: "/blog" }} />
-          <SidebarOption option={{ label: "Projects", to: "/projects" }} />
-          <SidebarOption option={{ label: "About", to: "/about" }} />
-          <SidebarOption option={{ label: "Contact", to: "/contact" }} />
+          <SidebarOption option={{ label: "Home", iconFileName: "home.svg", to: "/" }} />
+          <SidebarOption option={{ label: "Blog", iconFileName: "blog.svg", to: "/blog" }} />
+          <SidebarOption option={{ label: "Projects", iconFileName: "projects.svg", to: "/projects" }} />
+          <SidebarOption option={{ label: "About", iconFileName: "about.svg", to: "/about" }} />
+          <SidebarOption option={{ label: "Contact", iconFileName: "contact.svg", to: "/contact" }} />
         </div>
       </Provider>
     ),
@@ -114,6 +119,7 @@ export const DarkTheme: Story = {
   args: {
     option: {
       label: "Dark Theme Example",
+      iconFileName: "home.svg",
       to: "/dark",
     },
   },

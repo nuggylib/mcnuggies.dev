@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
+import { Provider } from "react-redux"
+import { configureStore } from "@reduxjs/toolkit"
 import { SearchModal } from "./SearchModal"
 import { SearchIndexItem } from "../../types/search"
+import searchReducer, { openSearchModal, setSearchQuery } from "../../redux/searchSlice"
 
 const mockSearchIndex: SearchIndexItem[] = [
   {
@@ -44,23 +47,30 @@ const mockSearchIndex: SearchIndexItem[] = [
   }
 ]
 
+const createMockStore = (isOpen: boolean, query: string) => {
+  const store = configureStore({
+    reducer: {
+      search: searchReducer
+    }
+  })
+
+  if (isOpen) {
+    store.dispatch(openSearchModal())
+  }
+  if (query) {
+    store.dispatch(setSearchQuery(query))
+  }
+
+  return store
+}
+
 const meta: Meta<typeof SearchModal> = {
-  title: "Layout/SearchModal",
+  title: "Modal/SearchModal",
   component: SearchModal,
   parameters: {
     layout: "fullscreen",
   },
   tags: ["autodocs"],
-  argTypes: {
-    isOpen: {
-      control: "boolean",
-      description: "Controls whether the modal is open or closed"
-    },
-    initialQuery: {
-      control: "text",
-      description: "Initial search query to populate the search input"
-    }
-  }
 }
 
 export default meta
@@ -68,53 +78,78 @@ type Story = StoryObj<typeof SearchModal>
 
 export const Closed: Story = {
   args: {
-    isOpen: false,
-    onClose: () => console.log("Modal closed"),
     searchIndex: mockSearchIndex
-  }
+  },
+  decorators: [
+    (Story) => (
+      <Provider store={createMockStore(false, "")}>
+        <Story />
+      </Provider>
+    )
+  ]
 }
 
 export const OpenEmpty: Story = {
   args: {
-    isOpen: true,
-    onClose: () => console.log("Modal closed"),
     searchIndex: mockSearchIndex,
-    initialQuery: ""
-  }
+  },
+  decorators: [
+    (Story) => (
+      <Provider store={createMockStore(true, "")}>
+        <Story />
+      </Provider>
+    )
+  ]
 }
 
 export const OpenWithQuery: Story = {
   args: {
-    isOpen: true,
-    onClose: () => console.log("Modal closed"),
     searchIndex: mockSearchIndex,
-    initialQuery: "React"
-  }
+  },
+  decorators: [
+    (Story) => (
+      <Provider store={createMockStore(true, "React")}>
+        <Story />
+      </Provider>
+    )
+  ]
 }
 
 export const OpenWithNoResults: Story = {
   args: {
-    isOpen: true,
-    onClose: () => console.log("Modal closed"),
     searchIndex: mockSearchIndex,
-    initialQuery: "Xyz123NotFound"
-  }
+  },
+  decorators: [
+    (Story) => (
+      <Provider store={createMockStore(true, "Xyz123NotFound")}>
+        <Story />
+      </Provider>
+    )
+  ]
 }
 
 export const OpenWithTypescriptQuery: Story = {
   args: {
-    isOpen: true,
-    onClose: () => console.log("Modal closed"),
     searchIndex: mockSearchIndex,
-    initialQuery: "TypeScript"
-  }
+  },
+  decorators: [
+    (Story) => (
+      <Provider store={createMockStore(true, "TypeScript")}>
+        <Story />
+      </Provider>
+    )
+  ]
 }
 
 export const EmptySearchIndex: Story = {
   args: {
-    isOpen: true,
-    onClose: () => console.log("Modal closed"),
     searchIndex: [],
-    initialQuery: "React"
-  }
+  },
+  decorators: [
+    (Story) => (
+      <Provider store={createMockStore(true, "React")}>
+        <Story />
+      </Provider>
+    )
+  ]
 }
