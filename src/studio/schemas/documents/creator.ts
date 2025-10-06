@@ -85,6 +85,13 @@ export default {
       type: `reference`,
       to: [{ type: `employer` }],
     },
+    {
+      name: `employers`,
+      title: `Employers`,
+      type: `array`,
+      of: [{ type: `reference`, to: [{ type: `employer` }] }],
+      description: `All employers (past and current) for this creator`,
+    },
   ],
   preview: {
     select: {

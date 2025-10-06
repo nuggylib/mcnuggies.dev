@@ -128,10 +128,10 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps() {
-    // TODO: Modify this so that it queries the user by the slug name (if possible - we may need a workaround)
+export async function getStaticProps(context: any) {
+    const { slug = `` } = context.params
     const creators = await sanityClient.fetch(`
-    *[_type == "creator" && name == "Armando Vasquez"]{
+    *[_type == "creator" && slug.current == $slug]{
         name,
         email,
         bio,
@@ -142,19 +142,21 @@ export async function getStaticProps() {
         githubUsername,
         linkedInUsername,
         linkedInUrl,
-    } 
-    `)
+        "employerIds": employers[]._ref
+    }
+    `, { slug: slug.toLowerCase() })
+
+    const employerIds = creators[0]?.employerIds || []
 
     const employers = await sanityClient.fetch(`
-    *[_type == "employer"]{
+    *[_type == "employer" && _id in $employerIds]{
         name,
         homePage,
         startDate,
         endDate,
-        homePage,
         "imageUrl": image.asset->url,
         "jobs": jobTitles[]->
-    } | order(startDate desc)`)
+    } | order(startDate desc)`, { employerIds })
 
     return {
       props: {
