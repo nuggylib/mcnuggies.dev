@@ -69,7 +69,6 @@ export default {
     },
     {
       title: `Open to Work`,
-      description: `Whether or not the Creator is open to work.`,
       validation: (Rule) => Rule.required(),
       name: `openToWork`,
       type: `boolean`,
