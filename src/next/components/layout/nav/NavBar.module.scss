@@ -45,10 +45,12 @@
     justify-content: center;
     color: vars.$gray-700;
     transition: all 0.3s ease;
+    margin-right: 0.5rem;
 
     &:hover {
-        color: vars.$brand-primary;
+        color: vars.$gray-A1;
         transform: scale(1.1);
+        border: 0;
     }
 
     svg {
