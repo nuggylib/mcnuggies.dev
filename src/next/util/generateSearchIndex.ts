@@ -19,7 +19,7 @@ async function generateSearchIndex() {
   console.log(`Generating search index...`)
 
   // Import buildSearchIndex AFTER environment variables are loaded
-  const { buildSearchIndex } = await import(`../util/buildSearchIndex`)
+  const { buildSearchIndex } = await import(`./buildSearchIndex`)
   const searchIndex = await buildSearchIndex()
 
   const outputPath = path.join(process.cwd(), `public`, `search-index.json`)
