@@ -1,3 +1,6 @@
+@use 'variables' as vars;
+@use 'mixins' as mixins;
+
 .pageHeader {
   margin-bottom: 2rem;
 
@@ -78,28 +81,69 @@
 }
 
 .sampleItem {
+  width: 100%;
   padding: 0.75rem 1rem;
-  background-color: var(--bs-light);
   border-radius: 6px;
-  border: 1px solid var(--bs-gray-300);
+  border: 1px solid vars.$gray-300;
   transition: all 0.2s ease;
-
-  &:hover {
-    background-color: var(--bs-white);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    border-color: var(--bs-gray-400);
-  }
 }
 
 .sampleLink {
   text-decoration: none;
-  color: var(--bs-primary);
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.2s ease;
-
-  &:hover {
-    color: var(--bs-primary-dark);
-    text-decoration: underline;
+  width: 100%;
+  @include mixins.card-hover;
+  p {
+    padding: 0;
+    margin: 0;
   }
+  // Override the default button styles
+  &:hover {
+    color: inherit;
+    background-color: inherit;
+  }
+}
+
+.sampleContent {
+  text-align: left;
+  width: 100%;
+  >:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+  span {
+    font-size: 20px;
+    transition: 0.2s ease;
+    color: vars.$brand-secondary;
+  }
+  p {
+    font-weight: 200;
+    font-style: italic;
+  }
+  &:hover {
+    span {
+      transition: 0.2s ease;
+      color: vars.$brand-primary;
+    }
+  }
+}
+
+.writingSampleTag {
+  font-size: 12px;
+  font-weight: 300;
+  color: vars.$gray-400;
+  border: 1px solid vars.$gray-400;
+  width: fit-content;
+  padding: 0.1rem 0.2rem;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+}
+
+.sampleLabelRow {
+  margin-top: 0.5rem;
+}
+
+.sampleContentBody {
+  margin-bottom: 0.5rem;
 }

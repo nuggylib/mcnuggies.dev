@@ -14,15 +14,21 @@ export const SamplesList: FunctionComponent<SamplesListProps> = ({
   return (
     <ul className={styles.samplesList}>
       {samples.map((sample, sampleIndex) => (
-        <li key={`sample-${groupIndex}-${sampleIndex}`} className={styles.sampleItem}>
-          <a
-            href={sample.url!}
-            target="_blank"
-            rel="noopener noreferrer"
+        <li key={`sample-${groupIndex}-${sampleIndex}`}>
+          <button
             className={styles.sampleLink}
+            onClick={() => window.open(sample.url!, `_blank`)}
           >
-            {sample.title}
-          </a>
+            <div className={styles.sampleContent}>
+              <div className={styles.sampleLabelRow}>
+                <span>{sample.title}</span>
+                <div className={styles.writingSampleTag}>Some Tag</div>
+              </div>
+              <div className={styles.sampleContentBody}>
+                <p>Some description</p>
+              </div>
+            </div>
+          </button>
         </li>
       ))}
     </ul>

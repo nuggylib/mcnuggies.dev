@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react"
 import Link from "next/link"
 import { Creator } from "../../../types/sanity"
-import styles from './writingSamples.module.scss'
+import styles from './WritingSamplesPageHeader.module.scss'
 
 export interface WritingSamplesPageHeaderProps {
   creator: Creator
@@ -14,7 +14,7 @@ export const WritingSamplesPageHeader: FunctionComponent<WritingSamplesPageHeade
     <div className={styles.pageHeader}>
       <h1>Writing Samples</h1>
       <p>
-        A curated list of writing samples by{` `}
+        A curated list of professional writing samples by{` `}
         <Link href={`/about/${creator.slug?.current}`}>
           {creator.name}
         </Link>

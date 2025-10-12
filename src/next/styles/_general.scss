@@ -58,8 +58,9 @@ ul {
 }
 
 a {
-    color: vars.$gray-600 !important;
+    color: vars.$brand-secondary !important;
     transition: 0.1s ease;
+    text-decoration: none !important;
     &:hover {
         cursor: pointer;
         transition: 0.1s ease;

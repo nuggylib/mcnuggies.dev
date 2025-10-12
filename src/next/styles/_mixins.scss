@@ -1,5 +1,13 @@
 @use 'variables' as vars;
 
+@mixin card-hover {
+    &:hover {
+        cursor: pointer;
+        transition: 0.2s ease;
+        box-shadow: 0 0 4px 4px vars.$brand-primary;
+    }
+}
+
 @mixin ease-transition-border-and-glow {
     transition: 0.2s ease !important;
     &:hover {
