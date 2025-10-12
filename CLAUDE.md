@@ -1,8 +1,4 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## Architecture Overview
+# mcnuggies.dev repository
 
 This is a personal blog site with two main applications:
 
