@@ -60,6 +60,8 @@ yarn tsc:studio # Sanity Studio
 yarn generateSchemaTypes
 ```
 
+- Run this any time the Sanity schema files are modified in any way (created, updated or deleted).
+
 ### Setup Commands
 
 **Initial setup:**

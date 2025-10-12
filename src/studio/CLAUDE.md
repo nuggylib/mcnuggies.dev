@@ -12,7 +12,7 @@ static/                 # Contains static resources for the Sanity studio (avail
 
 ## Development Notes
 
-- Objects are "schema-less"
-  - Because of this, you can publish fields to objects that haven't been pushed to production
-    - This leads to an "unrecognized field" error, if viewed in production (can be ignored)
--
+- Objects are "schema-less".
+  - Because of this, you can publish fields to objects that haven't been pushed to production.
+    - This leads to an "unrecognized field" error, if viewed in production (can be ignored).
+- Publishing content DOES modify data in the dataset, even if new fields only exist locally.

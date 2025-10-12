@@ -138,7 +138,7 @@ export interface Creator extends SanityDocument {
   /**
    * Open to Work — `boolean`
    *
-   *
+   * Whether or not the Creator is open to work.
    */
   openToWork?: boolean;
 
@@ -164,6 +164,13 @@ export interface Creator extends SanityDocument {
    *
    */
   currentEmployer?: SanityReference<Employer>;
+
+  /**
+   * Employers — `array`
+   *
+   * All employers (past and current) for this creator
+   */
+  employers?: Array<SanityKeyedReference<Employer>>;
 }
 
 /**
@@ -484,6 +491,43 @@ export interface Series extends SanityDocument {
   articles?: Array<SanityKeyedReference<Article>>;
 }
 
+/**
+ * Writing Sample
+ *
+ *
+ */
+export interface WritingSample extends SanityDocument {
+  _type: `writingSample`;
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string;
+
+  /**
+   * URL — `string`
+   *
+   *
+   */
+  url?: string;
+
+  /**
+   * Creator — `reference`
+   *
+   *
+   */
+  creator?: SanityReference<Creator>;
+
+  /**
+   * Company — `reference`
+   *
+   *
+   */
+  employer?: SanityReference<Employer>;
+}
+
 export type Documents =
   | Category
   | Creator
@@ -491,7 +535,8 @@ export type Documents =
   | JobTitle
   | Article
   | Project
-  | Series;
+  | Series
+  | WritingSample;
 
 /**
  * This interface is a stub. It was referenced in your sanity schema but
