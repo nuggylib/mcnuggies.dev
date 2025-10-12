@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react"
 import { WritingSample } from "../../../types/sanity"
 import { SamplesList } from "./SamplesList"
-import styles from './writingSamples.module.scss'
+import styles from './EmployerGroup.module.scss'
 import Image from 'next/image'
 
 export interface EmployerGroupProps {

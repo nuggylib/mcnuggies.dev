@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react"
 import { WritingSample } from "../../../types/sanity"
-import styles from './writingSamples.module.scss'
+import styles from './SamplesList.module.scss'
 
 export interface SamplesListProps {
   samples: WritingSample[]

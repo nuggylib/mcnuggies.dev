@@ -1,28 +1,6 @@
 @use 'variables' as vars;
 @use 'mixins' as mixins;
 
-.pageHeader {
-  margin-bottom: 2rem;
-
-  h1 {
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    color: var(--bs-secondary);
-    font-size: 1.1rem;
-
-    a {
-      color: var(--bs-primary);
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
 .samplesContainer {
   max-width: 800px;
 }
@@ -33,117 +11,10 @@
   gap: 2.5rem;
 }
 
-.employerGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.employerHeader {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--bs-gray-300);
-}
-
-.employerImage {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: var(--bs-white);
-  border: 1px solid var(--bs-gray-300);
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 0.25rem;
-  }
-}
-
-.employerName {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--bs-dark);
-}
-
-.samplesList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
 .sampleItem {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 6px;
   border: 1px solid vars.$gray-300;
   transition: all 0.2s ease;
-}
-
-.sampleLink {
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
-  width: 100%;
-  @include mixins.card-hover;
-  p {
-    padding: 0;
-    margin: 0;
-  }
-  // Override the default button styles
-  &:hover {
-    color: inherit;
-    background-color: inherit;
-  }
-}
-
-.sampleContent {
-  text-align: left;
-  width: 100%;
-  >:not(:last-child) {
-    margin-bottom: 0.5rem;
-  }
-  span {
-    font-size: 20px;
-    transition: 0.2s ease;
-    color: vars.$brand-secondary;
-  }
-  p {
-    font-weight: 200;
-    font-style: italic;
-  }
-  &:hover {
-    span {
-      transition: 0.2s ease;
-      color: vars.$brand-primary;
-    }
-  }
-}
-
-.writingSampleTag {
-  font-size: 12px;
-  font-weight: 300;
-  color: vars.$gray-400;
-  border: 1px solid vars.$gray-400;
-  width: fit-content;
-  padding: 0.1rem 0.2rem;
-  border-radius: 4px;
-  margin-top: 0.25rem;
-}
-
-.sampleLabelRow {
-  margin-top: 0.5rem;
-}
-
-.sampleContentBody {
-  margin-bottom: 0.5rem;
 }

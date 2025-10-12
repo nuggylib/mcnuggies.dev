@@ -12,6 +12,26 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: `tag`,
+      title: `Tag`,
+      type: `string`,
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: `description`,
+      validation: (Rule) => Rule.required(),
+      title: `Description`,
+      type: `array`,
+      of: [
+        {
+          title: `Block`,
+          type: `block`,
+          styles: [{ title: `Normal`, value: `normal` }],
+          lists: [],
+        },
+      ],
+    },
+    {
       name: `url`,
       title: `URL`,
       type: `string`,

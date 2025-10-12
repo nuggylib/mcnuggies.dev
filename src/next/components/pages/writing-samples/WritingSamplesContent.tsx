@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react"
 import { Creator, WritingSample } from "../../../types/sanity"
 import { WritingSamplesPageHeader } from "./WritingSamplesPageHeader"
 import { EmployerGroup } from "./EmployerGroup"
-import styles from './writingSamples.module.scss'
+import styles from './WritingSamples.module.scss'
 
 type WritingSampleWithEmployer = WritingSample & {
   employerName?: string
