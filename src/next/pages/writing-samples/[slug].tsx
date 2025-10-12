@@ -2,43 +2,16 @@ import React, { FunctionComponent } from "react"
 import { PageLayout } from "../../components/layout/PageLayout"
 import sanityClient from "../../sanity/client"
 import { Creator, WritingSample } from "../../types/sanity"
-import styles from './writingSamples.module.scss'
-import Link from "next/link"
+import { WritingSamplesContent } from "../../components/pages/writing-samples"
 
 type WritingSampleWithEmployer = WritingSample & {
   employerName?: string
   employerImageUrl?: string
 }
 
-interface EmployerGroup {
-  employerName: string
-  employerImageUrl?: string
-  samples: WritingSampleWithEmployer[]
-}
-
 interface WritingSamplesPageProps {
   creator: Creator
   writingSamples: WritingSampleWithEmployer[]
-}
-
-const groupSamplesByEmployer = (samples: WritingSampleWithEmployer[]): EmployerGroup[] => {
-  const groupMap = new Map<string, EmployerGroup>()
-
-  samples.forEach((sample) => {
-    const employerName = sample.employerName || `Unknown Employer`
-
-    if (!groupMap.has(employerName)) {
-      groupMap.set(employerName, {
-        employerName,
-        employerImageUrl: sample.employerImageUrl,
-        samples: []
-      })
-    }
-
-    groupMap.get(employerName)!.samples.push(sample)
-  })
-
-  return Array.from(groupMap.values())
 }
 
 const WritingSamplesPage: FunctionComponent<WritingSamplesPageProps> = ({
@@ -50,52 +23,16 @@ const WritingSamplesPage: FunctionComponent<WritingSamplesPageProps> = ({
     return null
   }
 
-  const groupedSamples = groupSamplesByEmployer(writingSamples)
-
   return (
     <PageLayout
       pageTitle={`Writing Samples - ${creator.name}`}
       useTitleOverlay={false}
       metaDescription={`Writing samples by ${creator.name}`}
     >
-      <div className={styles.pageHeader}>
-        <h1>Writing Samples</h1>
-        <p>By <Link href={`/about/${creator.slug?.current}`}>{creator.name}</Link></p>
-      </div>
-      <div className={styles.samplesContainer}>
-        {writingSamples.length > 0 ? (
-          <div className={styles.employerGroups}>
-            {groupedSamples.map((group, groupIndex) => (
-              <div key={`employer-${groupIndex}`} className={styles.employerGroup}>
-                <div className={styles.employerHeader}>
-                  {group.employerImageUrl && (
-                    <div className={styles.employerImage}>
-                      <img src={group.employerImageUrl} alt={`${group.employerName} logo`} />
-                    </div>
-                  )}
-                  <h2 className={styles.employerName}>{group.employerName}</h2>
-                </div>
-                <ul className={styles.samplesList}>
-                  {group.samples.map((sample, sampleIndex) => (
-                    <li key={`sample-${groupIndex}-${sampleIndex}`} className={styles.sampleItem}>
-                      <a
-                        href={sample.url!}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.sampleLink}
-                      >
-                        {sample.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p>No writing samples available.</p>
-        )}
-      </div>
+      <WritingSamplesContent
+        creator={creator}
+        writingSamples={writingSamples}
+      />
     </PageLayout>
   )
 }
