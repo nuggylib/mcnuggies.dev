@@ -37,6 +37,23 @@ const mockSamples = [
     _rev: "v1",
     title: "Building Scalable Microservices with Kubernetes",
     url: "https://example.com/article-1",
+    tag: "Technical Guide",
+    description: [
+      {
+        _key: "desc1",
+        _type: "block" as const,
+        children: [
+          {
+            _key: "text1",
+            _type: "span" as const,
+            marks: [],
+            text: "A comprehensive guide on building and deploying scalable microservices using Kubernetes orchestration.",
+          },
+        ],
+        markDefs: [],
+        style: "normal" as const,
+      },
+    ],
   },
   {
     _id: "sample2",
@@ -46,6 +63,23 @@ const mockSamples = [
     _rev: "v1",
     title: "Introduction to React Server Components",
     url: "https://example.com/article-2",
+    tag: "Tutorial",
+    description: [
+      {
+        _key: "desc2",
+        _type: "block" as const,
+        children: [
+          {
+            _key: "text2",
+            _type: "span" as const,
+            marks: [],
+            text: "Learn the fundamentals of React Server Components and how they revolutionize server-side rendering.",
+          },
+        ],
+        markDefs: [],
+        style: "normal" as const,
+      },
+    ],
   },
   {
     _id: "sample3",
@@ -55,6 +89,23 @@ const mockSamples = [
     _rev: "v1",
     title: "Performance Optimization in Modern Web Applications",
     url: "https://example.com/article-3",
+    tag: "Best Practices",
+    description: [
+      {
+        _key: "desc3",
+        _type: "block" as const,
+        children: [
+          {
+            _key: "text3",
+            _type: "span" as const,
+            marks: [],
+            text: "Discover proven strategies and techniques to optimize the performance of your web applications.",
+          },
+        ],
+        markDefs: [],
+        style: "normal" as const,
+      },
+    ],
   },
 ]
 
@@ -98,6 +149,23 @@ export const ManySamples: Story = {
         _rev: "v1",
         title: "GraphQL vs REST: A Comprehensive Comparison",
         url: "https://example.com/article-4",
+        tag: "Comparison",
+        description: [
+          {
+            _key: "desc4",
+            _type: "block" as const,
+            children: [
+              {
+                _key: "text4",
+                _type: "span" as const,
+                marks: [],
+                text: "An in-depth comparison of GraphQL and REST API architectures, including use cases and trade-offs.",
+              },
+            ],
+            markDefs: [],
+            style: "normal" as const,
+          },
+        ],
       },
       {
         _id: "sample5",
@@ -107,6 +175,23 @@ export const ManySamples: Story = {
         _rev: "v1",
         title: "Advanced TypeScript Patterns for Enterprise Applications",
         url: "https://example.com/article-5",
+        tag: "Advanced Guide",
+        description: [
+          {
+            _key: "desc5",
+            _type: "block" as const,
+            children: [
+              {
+                _key: "text5",
+                _type: "span" as const,
+                marks: [],
+                text: "Explore advanced TypeScript patterns and techniques for building robust enterprise-level applications.",
+              },
+            ],
+            markDefs: [],
+            style: "normal" as const,
+          },
+        ],
       },
       {
         _id: "sample6",
@@ -116,6 +201,23 @@ export const ManySamples: Story = {
         _rev: "v1",
         title: "Best Practices for API Security in 2024",
         url: "https://example.com/article-6",
+        tag: "Security",
+        description: [
+          {
+            _key: "desc6",
+            _type: "block" as const,
+            children: [
+              {
+                _key: "text6",
+                _type: "span" as const,
+                marks: [],
+                text: "Essential security practices and strategies for protecting your APIs against modern threats.",
+              },
+            ],
+            markDefs: [],
+            style: "normal" as const,
+          },
+        ],
       },
     ],
     groupIndex: 0,

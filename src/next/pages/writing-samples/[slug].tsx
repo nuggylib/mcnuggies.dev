@@ -72,6 +72,8 @@ export async function getStaticProps(context: any) {
     *[_type == "writingSample" && creator._ref == $creatorId] | order(_createdAt desc) {
       title,
       url,
+      tag,
+      description,
       "employerName": employer->name,
       "employerImageUrl": employer->image.asset->url
     }

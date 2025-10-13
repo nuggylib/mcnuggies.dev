@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react"
+import { PortableText } from '@portabletext/react'
 import { WritingSample } from "../../../types/sanity"
 import styles from './SamplesList.module.scss'
 
@@ -22,10 +23,10 @@ export const SamplesList: FunctionComponent<SamplesListProps> = ({
             <div className={styles.sampleContent}>
               <div className={styles.sampleLabelRow}>
                 <span>{sample.title}</span>
-                <div className={styles.writingSampleTag}>Some Tag</div>
+                <div className={styles.writingSampleTag}>{sample.tag}</div>
               </div>
               <div className={styles.sampleContentBody}>
-                <p>Some description</p>
+                {sample.description && <PortableText value={sample.description} />}
               </div>
             </div>
           </button>

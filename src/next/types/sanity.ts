@@ -507,6 +507,20 @@ export interface WritingSample extends SanityDocument {
   title?: string;
 
   /**
+   * Tag — `string`
+   *
+   *
+   */
+  tag?: string;
+
+  /**
+   * Description — `array`
+   *
+   *
+   */
+  description?: Array<SanityKeyed<SanityBlock>>;
+
+  /**
    * URL — `string`
    *
    *

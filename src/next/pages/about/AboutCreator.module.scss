@@ -1,49 +1,123 @@
+@use 'variables' as vars;
+
 .creatorDetails {
-    display: inline-flex;
+    display: flex;
+    width: 100%;
 }
 
 .emailWrapper {
     display: inline-flex;
 }
 
+.socialLink:not(button),
+.metadataFields > div {
+    // Apply same scaling to non-button social links (like email)
+    @media screen and (min-width: vars.$tablet) {
+        a {
+            font-size: clamp(0.85rem, 1vw, 1rem);
+        }
+
+        svg, img {
+            width: clamp(18px, 1.5vw, 22px) !important;
+            height: clamp(18px, 1.5vw, 22px) !important;
+        }
+    }
+}
+
 .creatorMetadata {
     display: flex;
     flex-direction: column;
+    flex: 1;
+
+    // On desktop, constrain to image height
+    @media screen and (min-width: vars.$tablet) {
+        max-height: 256px;
+    }
+
+    h1 {
+        width: 100%;
+        text-align: left;
+
+        // Fluid typography for the name
+        @media screen and (min-width: vars.$tablet) {
+            font-size: clamp(1.75rem, 2vw, 2.5rem);
+            margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
+        }
+    }
 }
 
 .metadataFields {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    width: 100%;
+
+    // Desktop: use minimal gap and scale with viewport
+    @media screen and (min-width: vars.$tablet) {
+        gap: clamp(0.25rem, 0.5vw, 0.4rem);
+    }
+
+    // Mobile view: more spacing between items
+    @media screen and (max-width: vars.$tablet) {
+        gap: 0.75rem;
+    }
+
+    // Scale down experience text on desktop
+    > span {
+        @media screen and (min-width: vars.$tablet) {
+            font-size: clamp(0.85rem, 1vw, 1rem);
+        }
+    }
+}
+
+.internalLink {
+    width: 100%;
 }
 
 .socialLink {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
     span, a {
         margin-left: 0.5rem;
     }
-}
 
-.writingSamplesButton {
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--bs-primary);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-
-    &:hover {
-        background-color: var(--bs-primary-dark);
-        transform: translateY(-1px);
+    // Only center button content, not divs (like email)
+    &:is(button) {
+        justify-content: center;
     }
 
-    &:active {
-        transform: translateY(0);
+    // Desktop: fluid sizing based on viewport
+    @media screen and (min-width: vars.$tablet) {
+        padding: clamp(0.25rem, 0.5vw, 0.4rem) 0.5rem;
+
+        span, a {
+            font-size: clamp(0.85rem, 1vw, 1rem);
+        }
+
+        // Scale icons dynamically
+        svg, img {
+            width: clamp(18px, 1.5vw, 22px) !important;
+            height: clamp(18px, 1.5vw, 22px) !important;
+        }
+    }
+
+    // Mobile view: adjust font and padding for better fit
+    @media screen and (max-width: vars.$tablet) {
+        padding: 0.625rem 0.5rem;
+
+        span, a {
+            font-size: 0.95rem;
+        }
+    }
+
+    // Extra small mobile devices
+    @media screen and (max-width: vars.$mobileL) {
+        padding: 0.5rem 0.375rem;
+
+        span, a {
+            font-size: 0.9rem;
+        }
     }
 }
 

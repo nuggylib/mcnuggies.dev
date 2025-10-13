@@ -86,16 +86,21 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
                   />
                 <span>{creator.githubUsername}</span>
               </button>}
+              {writingSamplesCount > 0 && (
+                <Link href={`/writing-samples/${creatorSlug}`} className={styles.internalLink}>
+                  <button className={styles.socialLink}>
+                    <CustomIcon
+                      fileName='bootstrap-vector-pen'
+                      height={22}
+                      width={22}
+                    />
+                    <span>Writing Samples</span>
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
-        {writingSamplesCount > 0 && (
-          <Link href={`/writing-samples/${creatorSlug}`}>
-            <button className={styles.writingSamplesButton}>
-              Writing Samples
-            </button>
-          </Link>
-        )}
         <div className={styles.bio}>
           <PortableText
             value={creator.bio!}
