@@ -48,10 +48,15 @@ const mockCreator = {
 // Mock employer data
 const mockEmployers = [
   {
+    _id: "employer-1",
+    _type: "employer" as const,
+    _createdAt: "2024-01-01T00:00:00Z",
+    _updatedAt: "2024-01-01T00:00:00Z",
+    _rev: "1",
     name: "Tech Company Inc",
     homePage: "https://example.com",
     startDate: "2020-01-01",
-    endDate: null,
+    endDate: undefined,
     imageUrl: "https://via.placeholder.com/100x100/4a5568/ffffff?text=TC",
     jobs: [
       {
@@ -62,7 +67,7 @@ const mockEmployers = [
         _rev: "1",
         title: "Senior Software Engineer",
         startDate: "2020-01-01",
-        endDate: null,
+        endDate: undefined,
       },
     ],
   },
