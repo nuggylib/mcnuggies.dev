@@ -1,4 +1,5 @@
 @use 'variables' as vars;
+@use 'mixins' as mixins;
 
 .sectionContainer {
     transition: 0.2s ease;
@@ -27,11 +28,7 @@
             font-weight: 300;
         }
     }
-    &:hover {
-        cursor: pointer;
-        transition: 0.2s ease;
-        box-shadow: 0 0 4px 4px vars.$brand-primary;
-    }
+    @include mixins.card-hover;
     @media  screen and (max-width: vars.$laptop) {
         padding: 0.5rem 1rem 0.5rem 1rem;
     }

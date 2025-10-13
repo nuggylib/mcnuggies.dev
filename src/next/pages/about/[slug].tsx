@@ -11,6 +11,7 @@ import styles from './AboutCreator.module.scss'
 import { LinkedInLogo } from "../../components/shared/icons/LinkedInLogo"
 import { GitHubLogo } from "../../components/shared/icons/GitHubLogo"
 import CustomIcon from "../../components/shared/CustomIcon"
+import Link from "next/link"
 
 type EmployerProps = Employer & {
     imageUrl: string
@@ -25,6 +26,8 @@ type CreatorProps = Creator & {
 interface AboutCreatorPageProps {
     creators: CreatorProps[]
     employers: EmployerProps[]
+    writingSamplesCount: number
+    creatorSlug: string
 }
 
 const getYearsSinceDate = (startDate: Date) => {
@@ -35,7 +38,9 @@ const getYearsSinceDate = (startDate: Date) => {
 
 const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
     creators,
-    employers
+    employers,
+    writingSamplesCount,
+    creatorSlug
 }) => {
     // There will only be one creator in the response since they should be queried by a unique identifier
     const creator = creators?.[0]
@@ -46,10 +51,8 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
 
     return (
       <PageLayout
-            // TODO: Use the creator's name
             pageTitle={`About ${creator.name}`}
             useTitleOverlay={false}
-            // TODO: Use the creator's name
             metaDescription={`Creator details for ${creator.name}`}
         >
         <div className={styles.creatorDetails}>
@@ -83,6 +86,18 @@ const AboutCreatorPage: FunctionComponent<AboutCreatorPageProps> = ({
                   />
                 <span>{creator.githubUsername}</span>
               </button>}
+              {writingSamplesCount > 0 && (
+                <Link href={`/writing-samples/${creatorSlug}`} className={styles.internalLink}>
+                  <button className={styles.socialLink}>
+                    <CustomIcon
+                      fileName='bootstrap-vector-pen'
+                      height={22}
+                      width={22}
+                    />
+                    <span>Writing Samples</span>
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -146,11 +161,13 @@ export async function getStaticProps(context: any) {
         githubUsername,
         linkedInUsername,
         linkedInUrl,
-        "employerIds": employers[]._ref
+        "employerIds": employers[]._ref,
+        _id
     }
     `, { slug: slug.toLowerCase() })
 
     const employerIds = creators[0]?.employerIds || []
+    const creatorId = creators[0]?._id
 
     const employers = await sanityClient.fetch(`
     *[_type == "employer" && _id in $employerIds]{
@@ -162,10 +179,17 @@ export async function getStaticProps(context: any) {
         "jobs": jobTitles[]->
     } | order(startDate desc)`, { employerIds })
 
+    // Get count of writing samples for this creator
+    const writingSamplesCount = creatorId
+      ? await sanityClient.fetch(`count(*[_type == "writingSample" && creator._ref == $creatorId])`, { creatorId })
+      : 0
+
     return {
       props: {
           creators,
-          employers
+          employers,
+          writingSamplesCount,
+          creatorSlug: slug.toLowerCase()
       }
   }
 }

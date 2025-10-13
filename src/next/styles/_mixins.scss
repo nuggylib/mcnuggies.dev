@@ -1,18 +1,27 @@
-@mixin ease-transition-border-and-glow(
-    $default-box-shadow: inherit,
-    $default-border-color: inherit,
-    $hover-border-color: transparent,
-    $glow-color: transparent,
-    $glow-range: 0px,
-    $duration: 0.1s
-) {
-    transition: $duration ease !important;
-    box-shadow: $default-box-shadow !important;
-    border-color: $default-border-color !important;
+@use 'variables' as vars;
+
+@mixin card-hover {
     &:hover {
-        border-color: $hover-border-color !important;
-        box-shadow: 0px 0px $glow-range $glow-range $glow-color !important;
-        transition: $duration ease !important;
+        cursor: pointer;
+        transition: 0.2s ease;
+        box-shadow: 0 0 4px 4px vars.$brand-primary;
+    }
+}
+
+@mixin ease-transition-border-and-glow {
+    transition: 0.2s ease !important;
+    &:hover {
+        transition: 0.2s ease !important;
+        background-color: vars.$gray-A1;
+        outline: none !important;
+        border-color: vars.$brand-primary !important;
+        box-shadow: 0px 0px 1px 1px vars.$brand-primary !important;
+    }
+    &:focus {
+        background-color: vars.$gray-A1;
+        outline: none !important;
+        border-color: vars.$brand-primary !important;
+        box-shadow: 0px 0px 2px 2px vars.$brand-primary !important;
     }
 }
 
